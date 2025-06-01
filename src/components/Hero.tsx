@@ -4,8 +4,8 @@ import { ArrowRight, Mail, Linkedin } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="min-h-screen flex items-center pt-20 pb-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
