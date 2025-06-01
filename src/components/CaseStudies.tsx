@@ -52,7 +52,7 @@ const CaseStudies = () => {
   ];
 
   return (
-    <section id="case-studies" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section id="case-studies" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-pink-50 to-purple-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -69,7 +69,7 @@ const CaseStudies = () => {
               key={index}
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-[1.02]"
             >
-              <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500 relative overflow-hidden">
+              <div className="h-48 bg-gradient-to-br from-pink-400 to-purple-400 relative overflow-hidden">
                 <img 
                   src={`https://images.unsplash.com/${study.image}?w=400&h=200&fit=crop`}
                   alt={study.title}
@@ -102,7 +102,7 @@ const CaseStudies = () => {
                 <div className="grid grid-cols-2 gap-4">
                   {study.results.map((result, i) => (
                     <div key={i} className="text-center">
-                      <div className="text-2xl font-bold text-blue-600 mb-1">
+                      <div className="text-2xl font-bold text-pink-500 mb-1">
                         {result.value}
                       </div>
                       <div className="text-xs text-gray-600">

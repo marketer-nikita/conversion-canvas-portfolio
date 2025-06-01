@@ -18,7 +18,7 @@ const About = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+            <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">My Journey</h3>
               <p className="text-gray-700 mb-4">
                 Started as a digital marketing enthusiast and quickly specialized in performance marketing, 
@@ -35,7 +35,7 @@ const About = () => {
           <div className="space-y-6">
             <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="flex items-center mb-4">
-                <Award className="w-8 h-8 text-blue-600 mr-3" />
+                <Award className="w-8 h-8 text-pink-400 mr-3" />
                 <h4 className="text-xl font-semibold">Expertise</h4>
               </div>
               <ul className="space-y-2 text-gray-700">
@@ -49,7 +49,7 @@ const About = () => {
             
             <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="flex items-center mb-4">
-                <Briefcase className="w-8 h-8 text-purple-600 mr-3" />
+                <Briefcase className="w-8 h-8 text-purple-400 mr-3" />
                 <h4 className="text-xl font-semibold">Industries</h4>
               </div>
               <ul className="space-y-2 text-gray-700">

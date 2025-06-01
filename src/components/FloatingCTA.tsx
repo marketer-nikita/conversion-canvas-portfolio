@@ -44,7 +44,7 @@ const FloatingCTA = () => {
           </p>
           <button
             onClick={scrollToContact}
-            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:scale-105 transition-all duration-300"
+            className="w-full bg-gradient-to-r from-pink-400 to-purple-400 text-white px-4 py-2 rounded-lg font-semibold hover:scale-105 transition-all duration-300"
           >
             Start Conversation
           </button>
@@ -53,7 +53,7 @@ const FloatingCTA = () => {
       
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 hover:shadow-xl"
+        className="bg-gradient-to-r from-pink-400 to-purple-400 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 hover:shadow-xl"
       >
         <MessageCircle size={24} />
       </button>

@@ -59,13 +59,13 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-pink-400 to-purple-400">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Client Testimonials
           </h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-pink-100 max-w-3xl mx-auto">
             Hear what clients say about working with me
           </p>
         </div>
@@ -73,7 +73,7 @@ const Testimonials = () => {
         <div className="relative">
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
             <div className="flex items-center justify-between mb-8">
-              <Quote className="w-12 h-12 text-blue-600 opacity-20" />
+              <Quote className="w-12 h-12 text-pink-400 opacity-20" />
               <div className="flex space-x-1">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
@@ -98,7 +98,7 @@ const Testimonials = () => {
                 <div className="text-gray-600">
                   {testimonials[currentIndex].role}
                 </div>
-                <div className="text-blue-600 font-semibold">
+                <div className="text-pink-500 font-semibold">
                   {testimonials[currentIndex].company}
                 </div>
               </div>

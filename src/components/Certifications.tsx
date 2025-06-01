@@ -58,7 +58,7 @@ const Certifications = () => {
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-lg flex items-center justify-center mr-4">
                     <Award className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -82,7 +82,7 @@ const Certifications = () => {
                   {cert.skills.map((skill, i) => (
                     <span 
                       key={i}
-                      className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium"
+                      className="bg-pink-50 text-pink-600 px-3 py-1 rounded-full text-sm font-medium"
                     >
                       {skill}
                     </span>
@@ -93,7 +93,7 @@ const Certifications = () => {
           ))}
         </div>
         
-        <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
+        <div className="mt-16 bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Additional Skills & Tools</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[

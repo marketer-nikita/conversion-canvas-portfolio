@@ -13,7 +13,9 @@ import FloatingCTA from '@/components/FloatingCTA';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-lavender-50 to-mint-50" style={{
+      background: 'linear-gradient(135deg, #fdf2f8 0%, #f0f4ff 50%, #f0fdf4 100%)'
+    }}>
       <Navbar />
       <Hero />
       <About />
