@@ -6,7 +6,7 @@ import About from '@/components/About';
 import Experience from '@/components/Experience';
 import CaseStudies from '@/components/CaseStudies';
 import Certifications from '@/components/Certifications';
-import Testimonials from '@/components/Testimonials';
+// import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
@@ -22,7 +22,7 @@ const Index = () => {
       <Experience />
       <CaseStudies />
       <Certifications />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Contact />
       <Footer />
       <FloatingCTA />

@@ -69,40 +69,40 @@ const CaseStudies = () => {
               key={index}
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-[1.02]"
             >
-              <div className="h-48 bg-gradient-to-br from-pink-400 to-purple-400 relative overflow-hidden">
+              <div className="h-32 bg-gradient-to-br from-pink-400 to-purple-400 relative overflow-hidden">
                 <img 
-                  src={`https://images.unsplash.com/${study.image}?w=400&h=200&fit=crop`}
+                  src={`https://images.unsplash.com/${study.image}?w=400&h=128&fit=crop`}
                   alt={study.title}
                   className="w-full h-full object-cover opacity-20"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
-                    <div className="text-sm font-semibold bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full mb-2">
+                    <div className="text-sm font-semibold bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full mb-1">
                       {study.industry}
                     </div>
-                    <h3 className="text-xl font-bold">{study.client}</h3>
+                    <h3 className="text-lg font-bold">{study.client}</h3>
                   </div>
                 </div>
               </div>
               
               <div className="p-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{study.title}</h4>
-                <p className="text-gray-600 mb-4 text-sm">{study.description}</p>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">{study.title}</h4>
+                <p className="text-gray-600 mb-3 text-sm">{study.description}</p>
+                
+                <div className="mb-3">
+                  <h5 className="font-semibold text-gray-900 mb-1 text-sm">Challenge:</h5>
+                  <p className="text-gray-600 text-xs">{study.challenge}</p>
+                </div>
                 
                 <div className="mb-4">
-                  <h5 className="font-semibold text-gray-900 mb-2">Challenge:</h5>
-                  <p className="text-gray-600 text-sm">{study.challenge}</p>
+                  <h5 className="font-semibold text-gray-900 mb-1 text-sm">Solution:</h5>
+                  <p className="text-gray-600 text-xs">{study.solution}</p>
                 </div>
                 
-                <div className="mb-6">
-                  <h5 className="font-semibold text-gray-900 mb-2">Solution:</h5>
-                  <p className="text-gray-600 text-sm">{study.solution}</p>
-                </div>
-                
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-3">
                   {study.results.map((result, i) => (
-                    <div key={i} className="text-center">
-                      <div className="text-2xl font-bold text-pink-500 mb-1">
+                    <div key={i} className="text-center p-2 bg-gradient-to-br from-pink-50 to-purple-50 rounded-lg">
+                      <div className="text-lg font-bold text-pink-500 mb-1">
                         {result.value}
                       </div>
                       <div className="text-xs text-gray-600">

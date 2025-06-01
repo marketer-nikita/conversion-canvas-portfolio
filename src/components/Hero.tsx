@@ -1,63 +1,69 @@
 
 import React from 'react';
-import { ArrowRight, TrendingUp, Target, Users } from 'lucide-react';
+import { ArrowRight, Mail, Linkedin } from 'lucide-react';
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="home" className="pt-16 pb-20 px-4 sm:px-6 lg:px-8">
+    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center">
-          <div className="animate-fade-in">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Performance Marketing
-              <span className="block bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-                That Drives Results
+              Hi, I'm{' '}
+              <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                Alex Morgan
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Specializing in Google Ads, Meta Ads, and B2B lead generation with 2 years of proven success 
-              across fintech, healthcare, and background verification industries.
+            <p className="text-xl md:text-2xl text-gray-600 mb-8">
+              Performance Marketing Specialist helping businesses grow through 
+              data-driven campaigns and strategic optimization.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a 
+                href="#contact" 
+                className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-pink-400 to-purple-400 text-white font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Get In Touch
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
+              <div className="flex gap-4 justify-center lg:justify-start">
+                <a 
+                  href="mailto:alex.morgan@example.com" 
+                  className="p-3 bg-white/50 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
+                >
+                  <Mail className="w-6 h-6 text-gray-700" />
+                </a>
+                <a 
+                  href="https://linkedin.com/in/alexmorgan" 
+                  className="p-3 bg-white/50 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
+                >
+                  <Linkedin className="w-6 h-6 text-gray-700" />
+                </a>
+              </div>
+            </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <button 
-              onClick={scrollToContact}
-              className="bg-gradient-to-r from-pink-400 to-purple-400 text-white px-8 py-4 rounded-lg font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 justify-center"
-            >
-              Let's Work Together
-              <ArrowRight size={20} />
-            </button>
-            <button 
-              onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-2 border-pink-400 text-pink-500 px-8 py-4 rounded-lg font-semibold hover:bg-pink-400 hover:text-white transition-all duration-300 hover:scale-105"
-            >
-              View Case Studies
-            </button>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <TrendingUp className="w-12 h-12 text-pink-400 mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold mb-2">ROI Optimization</h3>
-              <p className="text-gray-600">Maximizing returns through data-driven campaign strategies</p>
-            </div>
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <Target className="w-12 h-12 text-purple-400 mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold mb-2">Precision Targeting</h3>
-              <p className="text-gray-600">Advanced audience segmentation for optimal reach</p>
-            </div>
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <Users className="w-12 h-12 text-emerald-400 mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold mb-2">Lead Generation</h3>
-              <p className="text-gray-600">Quality B2B leads that convert into customers</p>
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 p-2">
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                  alt="Alex Morgan - Performance Marketing Specialist"
+                  className="w-full h-full rounded-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-xl">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-gray-900">2+</div>
+                  <div className="text-sm text-gray-600">Years Exp</div>
+                </div>
+              </div>
+              <div className="absolute -top-4 -left-4 bg-white rounded-full p-4 shadow-xl">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-pink-500">500K+</div>
+                  <div className="text-sm text-gray-600">Ad Spend</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
