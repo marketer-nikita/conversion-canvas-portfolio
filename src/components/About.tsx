@@ -50,16 +50,17 @@ const About = () => {
               </h3>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  Started as a digital marketing enthusiast and quickly specialized in performance marketing, 
-                  focusing on Google Ads and Meta Ads platforms.
+                  I'm a performance marketer with a sharp eye for ROAS and a deep curiosity for user behavior. 
+                  Over the past 2 years, I've worked with both startups and established brands to run paid 
+                  campaigns that drive real business outcomes — not just clicks.
                 </p>
                 <p>
-                  My data-driven approach has helped businesses achieve significant growth in lead generation 
-                  and revenue optimization.
+                  Currently, I'm leveling up through Young Urban Project's performance marketing cohort, 
+                  expanding my expertise in full-funnel strategy, creative testing, and advanced media buying.
                 </p>
                 <p>
-                  I thrive on the challenge of turning marketing spend into measurable business results, 
-                  constantly testing and optimizing campaigns to achieve the best possible ROI.
+                  Whether it's scaling Google Ads for a fintech product or acquiring high-intent leads for 
+                  a healthcare client, I'm driven by performance — and purpose.
                 </p>
               </div>
             </div>
@@ -109,7 +110,7 @@ const About = () => {
                   B2B SaaS
                 </div>
                 <div className="bg-purple-50 px-3 py-2 rounded-lg text-center text-sm font-medium text-gray-700">
-                  Verification
+                  B2B Platforms
                 </div>
               </div>
             </div>

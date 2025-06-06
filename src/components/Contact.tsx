@@ -35,10 +35,11 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Let's Grow Your Business Together
+            Ready to Collaborate?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to take your performance marketing to the next level? Let's discuss your goals and create a strategy that delivers results.
+            Ready to collaborate or want to chat about growth marketing? 
+            Let's connect. Drop a message or reach out via LinkedIn.
           </p>
         </div>
         
@@ -51,7 +52,7 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-blue-600 mr-4" />
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-gray-600">alex.morgan@example.com</div>
+                    <div className="text-gray-600">nikita.gupta@example.com</div>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -65,7 +66,7 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 text-blue-600 mr-4" />
                   <div>
                     <div className="font-semibold">Location</div>
-                    <div className="text-gray-600">New York, NY (Remote Available)</div>
+                    <div className="text-gray-600">India (Remote Available)</div>
                   </div>
                 </div>
               </div>
@@ -78,10 +79,13 @@ const Contact = () => {
                   <Calendar className="w-5 h-5 mr-2" />
                   Schedule a Strategy Call
                 </button>
-                <button className="w-full border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-colors duration-200 flex items-center justify-center">
+                <a 
+                  href="https://linkedin.com/in/nikitaguptamarketing"
+                  className="w-full border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-colors duration-200 flex items-center justify-center"
+                >
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  Start a Chat
-                </button>
+                  Connect on LinkedIn
+                </a>
               </div>
             </div>
             

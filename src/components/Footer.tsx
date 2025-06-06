@@ -10,21 +10,21 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-4">
-            Alex Morgan
+            Nikita Gupta
           </h3>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-            Performance marketing specialist helping businesses grow through data-driven campaigns 
-            and strategic optimization.
+            Performance marketer passionate about data-driven growth, lead generation, and media buying
+            across fintech, healthcare, and B2B platforms.
           </p>
           
           {/* Contact Information */}
           <div className="flex flex-wrap justify-center gap-6 mb-8">
             <a 
-              href="mailto:alex.morgan@example.com" 
+              href="mailto:nikita.gupta@example.com" 
               className="flex items-center text-gray-300 hover:text-pink-400 transition-colors duration-200"
             >
               <Mail size={18} className="mr-2" />
-              alex.morgan@example.com
+              nikita.gupta@example.com
             </a>
             <a 
               href="tel:+15551234567" 
@@ -35,20 +35,20 @@ const Footer = () => {
             </a>
             <div className="flex items-center text-gray-300">
               <MapPin size={18} className="mr-2" />
-              Remote / New York, NY
+              India / Remote
             </div>
           </div>
           
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-8">
             <a 
-              href="https://linkedin.com/in/alexmorgan" 
+              href="https://linkedin.com/in/nikitaguptamarketing" 
               className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-pink-400 hover:to-purple-400 transition-all duration-300 hover:scale-110"
             >
               <Linkedin size={20} />
             </a>
             <a 
-              href="mailto:alex.morgan@example.com" 
+              href="mailto:nikita.gupta@example.com" 
               className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-pink-400 hover:to-purple-400 transition-all duration-300 hover:scale-110"
             >
               <Mail size={20} />
@@ -66,7 +66,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} Alex Morgan. All rights reserved.
+            © {currentYear} Nikita Gupta. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm flex items-center">
             Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> for performance marketing excellence

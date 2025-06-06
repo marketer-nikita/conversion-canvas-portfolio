@@ -11,12 +11,13 @@ const Hero = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Hi, I'm{' '}
               <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-                Alex Morgan
+                Nikita Gupta
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
-              Performance Marketing Specialist helping businesses grow through 
-              data-driven campaigns and strategic optimization.
+              A performance marketer passionate about data-driven growth, lead generation, and media buying. 
+              With nearly 2 years of hands-on experience across fintech, healthcare, and B2B platforms, 
+              I help brands scale profitably using Google & Meta Ads.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a 
@@ -28,13 +29,13 @@ const Hero = () => {
               </a>
               <div className="flex gap-4 justify-center lg:justify-start">
                 <a 
-                  href="mailto:alex.morgan@example.com" 
+                  href="mailto:nikita.gupta@example.com" 
                   className="p-3 bg-white/50 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
                 >
                   <Mail className="w-6 h-6 text-gray-700" />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/alexmorgan" 
+                  href="https://linkedin.com/in/nikitaguptamarketing" 
                   className="p-3 bg-white/50 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
                 >
                   <Linkedin className="w-6 h-6 text-gray-700" />
@@ -48,13 +49,13 @@ const Hero = () => {
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 p-2">
                 <img 
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                  alt="Alex Morgan - Performance Marketing Specialist"
+                  alt="Nikita Gupta - Performance Marketing Specialist"
                   className="w-full h-full rounded-full object-cover"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-xl">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">2+</div>
+                  <div className="text-2xl font-bold text-gray-900">2</div>
                   <div className="text-sm text-gray-600">Years Exp</div>
                 </div>
               </div>
