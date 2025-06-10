@@ -10,13 +10,11 @@ const Hero = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-                Performance Marketing
+                Helping brands grow with paid ads that convert.
               </span>
-              <br />
-              That Drives Results
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl">
-              500K+ ad spend managed across fintech, healthcare & B2B platforms with proven ROI growth
+              Data-backed strategies. Real results. Let's build.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a 

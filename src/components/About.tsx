@@ -93,27 +93,6 @@ const About = () => {
                 ))}
               </div>
             </div>
-            
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <div className="flex items-center mb-4">
-                <Briefcase className="w-6 h-6 text-pink-400 mr-3" />
-                <h4 className="text-xl font-semibold">Industries</h4>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-pink-50 px-3 py-2 rounded-lg text-center text-sm font-medium text-gray-700">
-                  Fintech
-                </div>
-                <div className="bg-purple-50 px-3 py-2 rounded-lg text-center text-sm font-medium text-gray-700">
-                  Healthcare
-                </div>
-                <div className="bg-pink-50 px-3 py-2 rounded-lg text-center text-sm font-medium text-gray-700">
-                  B2B SaaS
-                </div>
-                <div className="bg-purple-50 px-3 py-2 rounded-lg text-center text-sm font-medium text-gray-700">
-                  B2B Platforms
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
