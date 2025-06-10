@@ -6,64 +6,84 @@ const Certifications = () => {
   const certifications = [
     {
       name: "Google Ads Certified",
-      issuer: "Google",
+      platform: "Google",
       date: "2023",
-      description: "Search, Display, Shopping, and Video advertising",
-      skills: ["Campaign Management", "Bid Strategies", "Audience Targeting", "Performance Analysis"],
+      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png",
+      skills: ["Search Ads", "Display Ads", "Shopping", "Video"],
       verified: true
     },
     {
-      name: "Meta Certified Marketing Professional",
-      issuer: "Meta",
-      date: "2023",
-      description: "Facebook and Instagram advertising expertise",
-      skills: ["Creative Strategy", "Audience Building", "Campaign Optimization", "Analytics"],
+      name: "Meta Marketing Professional",
+      platform: "Meta",
+      date: "2023", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
+      skills: ["Facebook Ads", "Instagram Ads", "Creative Strategy", "Analytics"],
       verified: true
     },
     {
       name: "Google Analytics 4 Certified",
-      issuer: "Google",
+      platform: "Google",
       date: "2022",
-      description: "Advanced analytics and conversion tracking",
-      skills: ["Data Analysis", "Attribution Modeling", "Custom Reports", "Goal Tracking"],
+      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png", 
+      skills: ["GA4 Setup", "Conversion Tracking", "Attribution", "Reports"],
       verified: true
     },
     {
       name: "LinkedIn Marketing Professional",
-      issuer: "LinkedIn",
+      platform: "LinkedIn",
       date: "2023",
-      description: "B2B advertising and lead generation",
-      skills: ["B2B Targeting", "Lead Gen Forms", "Sponsored Content", "Account-Based Marketing"],
+      logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+      skills: ["B2B Targeting", "Lead Gen", "Sponsored Content", "ABM"],
+      verified: true
+    },
+    {
+      name: "HubSpot Content Marketing",
+      platform: "HubSpot",
+      date: "2022",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg",
+      skills: ["Content Strategy", "SEO", "Lead Nurturing", "Analytics"],
+      verified: true
+    },
+    {
+      name: "Salesforce Marketing Cloud",
+      platform: "Salesforce", 
+      date: "2023",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg",
+      skills: ["Email Marketing", "Automation", "Segmentation", "Reporting"],
       verified: true
     }
   ];
 
   return (
-    <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/50">
+    <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Certifications & Skills
+            Certifications & Credentials
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Continuously learning and staying certified in the latest marketing technologies
+            Industry-recognized certifications from leading marketing platforms
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {certifications.map((cert, index) => (
             <div 
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-gray-100"
+              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-lg flex items-center justify-center mr-4">
-                    <Award className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-white rounded-lg border border-gray-200 flex items-center justify-center mr-4 p-2">
+                    <img 
+                      src={cert.logo} 
+                      alt={cert.platform}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">{cert.name}</h3>
-                    <p className="text-gray-600">{cert.issuer} • {cert.date}</p>
+                    <h3 className="text-lg font-bold text-gray-900">{cert.name}</h3>
+                    <p className="text-gray-600 text-sm">{cert.platform} • {cert.date}</p>
                   </div>
                 </div>
                 {cert.verified && (
@@ -74,40 +94,18 @@ const Certifications = () => {
                 )}
               </div>
               
-              <p className="text-gray-700 mb-4">{cert.description}</p>
-              
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-3">Key Skills:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {cert.skills.map((skill, i) => (
-                    <span 
-                      key={i}
-                      className="bg-pink-50 text-pink-600 px-3 py-1 rounded-full text-sm font-medium"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+              <div className="flex flex-wrap gap-2">
+                {cert.skills.map((skill, i) => (
+                  <span 
+                    key={i}
+                    className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-16 bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Additional Skills & Tools</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              "HubSpot", "Salesforce", "Zapier", "Hotjar",
-              "Unbounce", "Optimizely", "SEMrush", "Ahrefs"
-            ].map((tool, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-200"
-              >
-                <span className="font-medium text-gray-800">{tool}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

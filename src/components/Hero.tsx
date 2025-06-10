@@ -9,15 +9,14 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Hi, I'm{' '}
               <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-                Nikita Gupta
+                Performance Marketing
               </span>
+              <br />
+              That Drives Results
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8">
-              A performance marketer passionate about data-driven growth, lead generation, and media buying. 
-              With nearly 2 years of hands-on experience across fintech, healthcare, and B2B platforms, 
-              I help brands scale profitably using Google & Meta Ads.
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl">
+              500K+ ad spend managed across fintech, healthcare & B2B platforms with proven ROI growth
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a 
@@ -61,8 +60,8 @@ const Hero = () => {
               </div>
               <div className="absolute -top-4 -left-4 bg-white rounded-full p-4 shadow-xl">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-pink-500">500K+</div>
-                  <div className="text-sm text-gray-600">Ad Spend</div>
+                  <div className="text-2xl font-bold text-pink-500">40%</div>
+                  <div className="text-sm text-gray-600">ROI Boost</div>
                 </div>
               </div>
             </div>

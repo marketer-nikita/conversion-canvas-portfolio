@@ -3,9 +3,11 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Industries from '@/components/Industries';
 import Experience from '@/components/Experience';
 import CaseStudies from '@/components/CaseStudies';
 import Certifications from '@/components/Certifications';
+import ToolsSkills from '@/components/ToolsSkills';
 // import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -19,9 +21,11 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
+      <Industries />
       <Experience />
       <CaseStudies />
       <Certifications />
+      <ToolsSkills />
       {/* <Testimonials /> */}
       <Contact />
       <Footer />
