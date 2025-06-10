@@ -3,10 +3,11 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Experience from '@/components/Experience';
+import Industries from '@/components/Industries';
 import CaseStudies from '@/components/CaseStudies';
 import Certifications from '@/components/Certifications';
 import ToolsSkills from '@/components/ToolsSkills';
+import Experience from '@/components/Experience';
 // import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -19,11 +20,11 @@ const Index = () => {
     }}>
       <Navbar />
       <Hero />
-      <About />
-      <Experience />
+      <Industries />
       <CaseStudies />
       <Certifications />
       <ToolsSkills />
+      <Experience />
       {/* <Testimonials /> */}
       <Contact />
       <Footer />

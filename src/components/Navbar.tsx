@@ -36,10 +36,10 @@ const Navbar = () => {
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {['Home', 'About', 'Experience', 'Case Studies', 'Certifications', 'Contact'].map((item) => (
+              {['Home', 'Industries', 'Case Studies', 'Certifications', 'Tools & Skills', 'Experience', 'Contact'].map((item) => (
                 <button
                   key={item}
-                  onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
+                  onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-').replace('&', ''))}
                   className="text-gray-700 hover:text-pink-500 px-3 py-2 text-sm font-medium transition-colors duration-200 hover:scale-105"
                 >
                   {item}
@@ -62,10 +62,10 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-sm">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {['Home', 'About', 'Experience', 'Case Studies', 'Certifications', 'Contact'].map((item) => (
+            {['Home', 'Industries', 'Case Studies', 'Certifications', 'Tools & Skills', 'Experience', 'Contact'].map((item) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
+                onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-').replace('&', ''))}
                 className="text-gray-700 hover:text-pink-500 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
               >
                 {item}
