@@ -36,7 +36,7 @@ const Navbar = () => {
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {['Home', 'Industries', 'Case Studies', 'Certifications', 'Tools & Skills', 'Experience', 'Contact'].map((item) => (
+              {['Home', 'Industries', 'About', 'Case Studies', 'Certifications', 'Tools & Skills', 'Experience', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-').replace('&', ''))}
@@ -62,7 +62,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-sm">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {['Home', 'Industries', 'Case Studies', 'Certifications', 'Tools & Skills', 'Experience', 'Contact'].map((item) => (
+            {['Home', 'Industries', 'About', 'Case Studies', 'Certifications', 'Tools & Skills', 'Experience', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-').replace('&', ''))}
