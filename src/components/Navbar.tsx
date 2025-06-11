@@ -15,9 +15,21 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    console.log('Attempting to scroll to section:', sectionId);
     const element = document.getElementById(sectionId);
+    console.log('Found element:', element);
+    
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Add offset for the fixed navbar
+      const navbarHeight = 64; // h-16 = 64px
+      const elementPosition = element.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    } else {
+      console.error('Element not found with ID:', sectionId);
     }
     setIsOpen(false);
   };
