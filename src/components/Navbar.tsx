@@ -22,6 +22,10 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const getSectionId = (item: string) => {
+    return item.toLowerCase().replace(/\s+&\s+/g, '-').replace(/\s+/g, '-');
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
@@ -39,7 +43,7 @@ const Navbar = () => {
               {['Home', 'Industries', 'About', 'Case Studies', 'Certifications', 'Tools & Skills', 'Experience', 'Contact'].map((item) => (
                 <button
                   key={item}
-                  onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-').replace('&', ''))}
+                  onClick={() => scrollToSection(getSectionId(item))}
                   className="text-gray-700 hover:text-pink-500 px-3 py-2 text-sm font-medium transition-colors duration-200 hover:scale-105"
                 >
                   {item}
@@ -65,7 +69,7 @@ const Navbar = () => {
             {['Home', 'Industries', 'About', 'Case Studies', 'Certifications', 'Tools & Skills', 'Experience', 'Contact'].map((item) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-').replace('&', ''))}
+                onClick={() => scrollToSection(getSectionId(item))}
                 className="text-gray-700 hover:text-pink-500 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
               >
                 {item}
