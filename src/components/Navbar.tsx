@@ -23,6 +23,10 @@ const Navbar = () => {
   };
 
   const getSectionId = (item: string) => {
+    // Map "Home" to "hero" since that's the actual section id
+    if (item === 'Home') {
+      return 'hero';
+    }
     return item.toLowerCase().replace(/\s+&\s+/g, '-').replace(/\s+/g, '-');
   };
 
