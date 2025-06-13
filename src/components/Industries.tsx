@@ -1,10 +1,9 @@
+
 import React from "react";
 import {
   Building2,
   Heart,
   Shield,
-  Users,
-  Briefcase,
   TrendingUp,
 } from "lucide-react";
 
@@ -34,6 +33,12 @@ const Industries = () => {
       description: "Identity verification, compliance solutions",
       results: "200+ monthly leads",
     },
+    {
+      name: "E-commerce",
+      icon: Building2,
+      description: "Online retail platforms, marketplace solutions",
+      results: "35% conversion boost",
+    },
   ];
 
   return (
@@ -49,7 +54,7 @@ const Industries = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
           {industries.map((industry, index) => (
             <div
               key={index}
