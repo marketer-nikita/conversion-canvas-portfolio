@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { Button } from '@/components/ui/button';
 
 const ToolsSkills = () => {
   const tools = [
@@ -92,8 +93,14 @@ const ToolsSkills = () => {
                           className="w-full h-full object-contain"
                         />
                       </div>
-                      <h3 className="font-semibold text-gray-900 text-sm mb-2">{tool.name}</h3>
-                      <p className="text-xs text-gray-600 leading-relaxed">{tool.description}</p>
+                      <h3 className="font-semibold text-gray-900 text-sm mb-3">{tool.name}</h3>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        className="text-xs px-3 py-1 h-auto"
+                      >
+                        Expertise
+                      </Button>
                     </div>
                   </div>
                 </TooltipTrigger>
