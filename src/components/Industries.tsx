@@ -54,30 +54,60 @@ const Industries = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
-          {industries.map((industry, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-gray-100"
-            >
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-lg flex items-center justify-center mr-4">
-                  <industry.icon className="w-6 h-6 text-white" />
+        <div className="flex flex-col items-center gap-8">
+          {/* First row - 3 cards */}
+          <div className="flex flex-wrap justify-center gap-8 lg:gap-6">
+            {industries.slice(0, 3).map((industry, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-gray-100 w-full sm:w-80"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-lg flex items-center justify-center mr-4">
+                    <industry.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {industry.name}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">
-                  {industry.name}
-                </h3>
-              </div>
 
-              <p className="text-gray-600 mb-4">{industry.description}</p>
+                <p className="text-gray-600 mb-4">{industry.description}</p>
 
-              <div className="bg-pink-50 rounded-lg p-3">
-                <div className="text-sm font-semibold text-pink-600">
-                  {industry.results}
+                <div className="bg-pink-50 rounded-lg p-3">
+                  <div className="text-sm font-semibold text-pink-600">
+                    {industry.results}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Second row - 2 cards */}
+          <div className="flex flex-wrap justify-center gap-8 lg:gap-6">
+            {industries.slice(3, 5).map((industry, index) => (
+              <div
+                key={index + 3}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-gray-100 w-full sm:w-80"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-lg flex items-center justify-center mr-4">
+                    <industry.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {industry.name}
+                  </h3>
+                </div>
+
+                <p className="text-gray-600 mb-4">{industry.description}</p>
+
+                <div className="bg-pink-50 rounded-lg p-3">
+                  <div className="text-sm font-semibold text-pink-600">
+                    {industry.results}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
