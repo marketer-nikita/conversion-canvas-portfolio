@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
@@ -5,90 +6,65 @@ const ToolsSkills = () => {
   const tools = [
     {
       name: "Google Ads",
-      category: "Paid Advertising",
-      proficiency: "Expert",
+      description: "Paid search & display campaigns",
       logo: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg"
     },
     {
-      name: "Meta Ads Manager", 
-      category: "Social Advertising",
-      proficiency: "Expert",
+      name: "Meta Ads", 
+      description: "Social ads across Facebook & Instagram",
       logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
     },
     {
-      name: "Google Analytics 4",
-      category: "Analytics",
-      proficiency: "Advanced",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png"
-    },
-    {
       name: "LinkedIn Ads",
-      category: "B2B Advertising", 
-      proficiency: "Advanced",
+      description: "B2B lead generation campaigns", 
       logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
     },
     {
-      name: "HubSpot",
-      category: "Marketing Automation",
-      proficiency: "Advanced",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg"
-    },
-    {
-      name: "Salesforce",
-      category: "CRM",
-      proficiency: "Intermediate",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg"
-    },
-    {
-      name: "Canva",
-      category: "Creative Design",
-      proficiency: "Advanced",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg"
-    },
-    {
-      name: "Zapier",
-      category: "Automation",
-      proficiency: "Intermediate", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Zapier_logo.svg"
-    },
-    {
-      name: "Hotjar",
-      category: "User Analytics",
-      proficiency: "Intermediate",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Hotjar_Logo.svg"
-    },
-    {
-      name: "Unbounce",
-      category: "Landing Pages",
-      proficiency: "Advanced",
-      logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=100&h=100&fit=crop"
-    },
-    {
       name: "SEMrush",
-      category: "SEO & Research",
-      proficiency: "Intermediate",
+      description: "Competitor & keyword research",
       logo: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=100&h=100&fit=crop"
     },
     {
-      name: "Ahrefs",
-      category: "SEO Analysis",
-      proficiency: "Intermediate", 
+      name: "Canva",
+      description: "Creatives for ads and branding",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg"
+    },
+    {
+      name: "MS Clarity",
+      description: "Heatmaps & user behavior tracking",
+      logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=100&h=100&fit=crop"
+    },
+    {
+      name: "Factors.ai",
+      description: "B2B attribution & funnel analysis",
       logo: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=100&h=100&fit=crop"
+    },
+    {
+      name: "Google Analytics 4",
+      description: "Website traffic & event tracking",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png"
+    },
+    {
+      name: "Zoho Campaigns",
+      description: "Email marketing & automation", 
+      logo: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=100&h=100&fit=crop"
+    },
+    {
+      name: "Apollo.io",
+      description: "Lead discovery & enrichment",
+      logo: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=100&h=100&fit=crop"
+    },
+    {
+      name: "VWO Tool",
+      description: "A/B testing & conversion optimization",
+      logo: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=100&h=100&fit=crop"
+    },
+    {
+      name: "Google Ads Editor",
+      description: "Bulk ad editing & offline sync",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png"
     }
   ];
-
-  const getProficiencyColor = (proficiency: string) => {
-    switch (proficiency) {
-      case "Expert":
-        return "bg-green-100 text-green-800";
-      case "Advanced":
-        return "bg-blue-100 text-blue-800";
-      case "Intermediate":
-        return "bg-yellow-100 text-yellow-800";
-      default:
-        return "bg-gray-100 text-gray-800";
-    }
-  };
 
   return (
     <section id="tools-skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -117,17 +93,14 @@ const ToolsSkills = () => {
                         />
                       </div>
                       <h3 className="font-semibold text-gray-900 text-sm mb-2">{tool.name}</h3>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getProficiencyColor(tool.proficiency)}`}>
-                        {tool.proficiency}
-                      </span>
+                      <p className="text-xs text-gray-600 leading-relaxed">{tool.description}</p>
                     </div>
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
                   <div className="text-center">
                     <p className="font-semibold">{tool.name}</p>
-                    <p className="text-sm text-gray-600">{tool.category}</p>
-                    <p className="text-sm">{tool.proficiency} Level</p>
+                    <p className="text-sm text-gray-600">{tool.description}</p>
                   </div>
                 </TooltipContent>
               </Tooltip>
