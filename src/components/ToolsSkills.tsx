@@ -1,80 +1,97 @@
-import React from 'react';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import React from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import GoogleAdsLogo from "../assets/image/Google_Ads_logo.svg";
+import MetaLogo from "../assets/image/Meta_Platforms_Inc._logo.svg";
+import GoogleAnalyticsLogo from "../assets/image/Logo_Google_Analytics.svg";
+import Factorsailogo from "../assets/image/factors-ai-logo.svg";
+import Linkedinlogo from "../assets/image/LinkedIn_logo_initials.png";
+import MSClarity from "../assets/image/Ms_Clarity-removebg-preview.svg";
+import Semrushlogo from "../assets/image/Semrush logo.svg";
+import VWOToollogo from "../assets/image/VWO-Logo-Color.svg";
+import ZohoCampaignlogo from "../assets/image/Zoho_Campaigns-removebg-preview.svg";
+import Canvalogo from "../assets/image/canva_logo.svg";
+import Apolloiologo from "../assets/image/apollo_io.svg";
+import GoogleAdsEditorlogo from "../assets/image/Google_Ads_Editor_logo.svg";
 
 const ToolsSkills = () => {
   const tools = [
     {
       name: "Google Ads",
-      category: "Paid Advertising",
+      category: "Paid search & display campaigns",
       proficiency: "Expert",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg"
+      logo: GoogleAdsLogo,
     },
     {
-      name: "Meta Ads Manager", 
-      category: "Social Advertising",
+      name: "Meta Ads Manager",
+      category: "Social ads across Facebook & Instagram",
       proficiency: "Expert",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
+      logo: MetaLogo,
     },
     {
       name: "Google Analytics 4",
       category: "Analytics",
       proficiency: "Advanced",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png"
+      logo: GoogleAnalyticsLogo,
     },
     {
       name: "LinkedIn Ads",
-      category: "B2B Advertising", 
+      category: "B2B lead generation campaigns",
       proficiency: "Advanced",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+      logo: Linkedinlogo,
     },
     {
-      name: "HubSpot",
-      category: "Marketing Automation",
+      name: "Google Ads Editor",
+      category: "Bulk ad editing & offline sync",
       proficiency: "Advanced",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg"
+      logo: GoogleAdsEditorlogo,
     },
     {
-      name: "Salesforce",
-      category: "CRM",
+      name: "Factors.ai",
+      category: "B2B attribution & funnel analysis",
       proficiency: "Intermediate",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg"
+      logo: Factorsailogo,
     },
     {
       name: "Canva",
-      category: "Creative Design",
+      category: "Creative Design and Branding",
       proficiency: "Advanced",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg"
+      logo: Canvalogo,
     },
     {
-      name: "Zapier",
-      category: "Automation",
-      proficiency: "Intermediate", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Zapier_logo.svg"
+      name: "Zoho Campaigns",
+      category: "Email Automation",
+      proficiency: "Intermediate",
+      logo: ZohoCampaignlogo,
     },
     {
-      name: "Hotjar",
+      name: "MS Clarity",
       category: "User Analytics",
       proficiency: "Intermediate",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Hotjar_Logo.svg"
+      logo: MSClarity,
     },
     {
-      name: "Unbounce",
-      category: "Landing Pages",
+      name: "VWO Tool",
+      category: "A/B testing & conversion optimization",
       proficiency: "Advanced",
-      logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=100&h=100&fit=crop"
+      logo: VWOToollogo,
     },
     {
       name: "SEMrush",
       category: "SEO & Research",
       proficiency: "Intermediate",
-      logo: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=100&h=100&fit=crop"
+      logo: Semrushlogo,
     },
     {
-      name: "Ahrefs",
-      category: "SEO Analysis",
-      proficiency: "Intermediate", 
-      logo: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=100&h=100&fit=crop"
-    }
+      name: "Apollo.io",
+      category: "Lead discovery & enrichment",
+      proficiency: "Intermediate",
+      logo: Apolloiologo,
+    },
   ];
 
   const getProficiencyColor = (proficiency: string) => {
@@ -91,7 +108,10 @@ const ToolsSkills = () => {
   };
 
   return (
-    <section id="tools-skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section
+      id="tools-skills"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -101,7 +121,7 @@ const ToolsSkills = () => {
             Proficient across the marketing technology stack
           </p>
         </div>
-        
+
         <TooltipProvider>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {tools.map((tool, index) => (
@@ -110,14 +130,20 @@ const ToolsSkills = () => {
                   <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.05] border border-gray-100 cursor-pointer group">
                     <div className="flex flex-col items-center text-center">
                       <div className="w-12 h-12 mb-3 flex items-center justify-center">
-                        <img 
+                        <img
                           src={tool.logo}
                           alt={tool.name}
                           className="w-full h-full object-contain"
                         />
                       </div>
-                      <h3 className="font-semibold text-gray-900 text-sm mb-2">{tool.name}</h3>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getProficiencyColor(tool.proficiency)}`}>
+                      <h3 className="font-semibold text-gray-900 text-sm mb-2">
+                        {tool.name}
+                      </h3>
+                      <span
+                        className={`px-2 py-1 rounded-full text-xs font-medium ${getProficiencyColor(
+                          tool.proficiency
+                        )}`}
+                      >
                         {tool.proficiency}
                       </span>
                     </div>
