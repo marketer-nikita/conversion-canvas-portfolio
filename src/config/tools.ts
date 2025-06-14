@@ -2,13 +2,13 @@ import GoogleAdsLogo from "../assets/image/Google_Ads_logo.svg";
 import MetaLogo from "../assets/image/Meta_Platforms_Inc._logo.svg";
 import GoogleAnalyticsLogo from "../assets/image/Logo_Google_Analytics.svg";
 import Factorsailogo from "../assets/image/factors-ai-logo.svg";
-import Linkedinlogo from "../assets/image/LinkedIn_logo_initials.png";
+import Linkedinlogo from "../assets/image/LinkedIn_logo_initials.svg";
 import MSClarity from "../assets/image/Ms_Clarity-removebg-preview.svg";
-import Semrushlogo from "../assets/image/Semrush logo.svg";
+import Semrushlogo from "../assets/image/SEMrush-logo.svg";
 import VWOToollogo from "../assets/image/VWO-Logo-Color.svg";
 import ZohoCampaignlogo from "../assets/image/Zoho_Campaigns-removebg-preview.svg";
 import Canvalogo from "../assets/image/canva_logo.svg";
-import Apolloiologo from "../assets/image/apollo_io.svg";
+import Apolloiologo from "../assets/image/Apollo.io_Logo.svg";
 import GoogleAdsEditorlogo from "../assets/image/Google_Ads_Editor_logo.svg";
 
 export const toolsConfig = [
