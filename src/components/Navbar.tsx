@@ -1,73 +1,82 @@
-
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { navigationConfig } from "@/config/navigation";
+import { profileConfig } from "@/config/profile";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
+
+      // Update active section based on scroll position
+      const sections = navigationConfig.map((nav) => nav.id);
+      const currentSection = sections.find((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+
+      if (currentSection) {
+        setActiveSection(currentSection);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    console.log('Attempting to scroll to section:', sectionId);
     const element = document.getElementById(sectionId);
-    console.log('Found element:', element);
-    
     if (element) {
-      // Add offset for the fixed navbar
-      const navbarHeight = 64; // h-16 = 64px
-      const elementPosition = element.offsetTop - navbarHeight;
-      
+      const offset = 80; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
       window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
+        top: offsetPosition,
+        behavior: "smooth",
       });
-    } else {
-      console.error('Element not found with ID:', sectionId);
     }
     setIsOpen(false);
   };
 
-  const getSectionId = (item: string) => {
-    // Map "Home" to "hero" since that's the actual section id
-    if (item === 'Home') {
-      return 'hero';
-    }
-    return item.toLowerCase().replace(/\s+&\s+/g, '-').replace(/\s+/g, '-');
-  };
-
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white/95 backdrop-blur-sm shadow-lg" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <span className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-              Nikita Gupta
+              {profileConfig.name}
             </span>
           </div>
-          
+
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {['Home', 'Industries', 'About', 'Case Studies', 'Certifications', 'Tools & Skills', 'Experience', 'Contact'].map((item) => (
+              {navigationConfig.map((item) => (
                 <button
-                  key={item}
-                  onClick={() => scrollToSection(getSectionId(item))}
-                  className="text-gray-700 hover:text-pink-500 px-3 py-2 text-sm font-medium transition-colors duration-200 hover:scale-105"
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`text-gray-700 hover:text-pink-500 px-3 py-2 text-sm font-medium transition-colors duration-200 hover:scale-105 ${
+                    activeSection === item.id ? "text-pink-500" : ""
+                  }`}
                 >
-                  {item}
+                  {item.label}
                 </button>
               ))}
             </div>
           </div>
-          
+
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -78,17 +87,19 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      
+
       {isOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-sm">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {['Home', 'Industries', 'About', 'Case Studies', 'Certifications', 'Tools & Skills', 'Experience', 'Contact'].map((item) => (
+            {navigationConfig.map((item) => (
               <button
-                key={item}
-                onClick={() => scrollToSection(getSectionId(item))}
-                className="text-gray-700 hover:text-pink-500 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-gray-700 hover:text-pink-500 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200 ${
+                  activeSection === item.id ? "text-pink-500" : ""
+                }`}
               >
-                {item}
+                {item.label}
               </button>
             ))}
           </div>

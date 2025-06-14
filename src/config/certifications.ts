@@ -1,0 +1,38 @@
+export const certificationsConfig = [
+  {
+    name: "Fundamentals of Digital Marketing",
+    platform: "Google Digital Garage",
+    date: "2023",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png",
+    skills: ["Digital Marketing", "SEO", "Analytics", "Strategy"],
+    verified: true,
+    link: "https://drive.google.com/file/d/1-2o0NSkN-SNnR6XV7yT_H98_HA_BxdN2/view?usp=drivesdk",
+  },
+  {
+    name: "Google Ads Search Certification",
+    platform: "Google",
+    date: "2023",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png",
+    skills: ["Search Ads", "Keywords", "Campaign Management", "Optimization"],
+    verified: true,
+    link: "https://skillshop.credential.net/7e3f3896-e432-4540-a2dd-737549810a96#acc.a7vNcAJV",
+  },
+  {
+    name: "Google Ads Display Certification",
+    platform: "Google",
+    date: "2023",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png",
+    skills: ["Display Ads", "Targeting", "Creative Strategy", "Remarketing"],
+    verified: true,
+    link: "https://skillshop.credential.net/8be5eb6f-3d76-4e42-af31-5d33c6915f92#acc.X2nO5fby",
+  },
+  {
+    name: "Google Analytics Certification (GA4)",
+    platform: "Google",
+    date: "2023",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png",
+    skills: ["GA4 Setup", "Conversion Tracking", "Attribution", "Reports"],
+    verified: true,
+    link: "https://skillshop.credential.net/c176115e-ded3-48d5-800b-1f81920a1400",
+  },
+];
