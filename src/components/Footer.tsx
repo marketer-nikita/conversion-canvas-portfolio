@@ -20,18 +20,18 @@ const Footer = () => {
           {/* Contact Information */}
           <div className="flex flex-wrap justify-center gap-6 mb-8">
             <a 
-              href="mailto:nikita.gupta@example.com" 
+              href="mailto:nikita.gupta7311@gmail.com" 
               className="flex items-center text-gray-300 hover:text-pink-400 transition-colors duration-200"
             >
               <Mail size={18} className="mr-2" />
-              nikita.gupta@example.com
+              nikita.gupta7311@gmail.com
             </a>
             <a 
-              href="tel:+15551234567" 
+              href="tel:7983863180" 
               className="flex items-center text-gray-300 hover:text-pink-400 transition-colors duration-200"
             >
               <Phone size={18} className="mr-2" />
-              +1 (555) 123-4567
+              +91 79838 63180
             </a>
             <div className="flex items-center text-gray-300">
               <MapPin size={18} className="mr-2" />
@@ -42,13 +42,15 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-8">
             <a 
-              href="https://linkedin.com/in/nikitaguptamarketing" 
+              href="https://www.linkedin.com/in/nikita-gupta-digital-marketer/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-pink-400 hover:to-purple-400 transition-all duration-300 hover:scale-110"
             >
               <Linkedin size={20} />
             </a>
             <a 
-              href="mailto:nikita.gupta@example.com" 
+              href="mailto:nikita.gupta7311@gmail.com" 
               className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-pink-400 hover:to-purple-400 transition-all duration-300 hover:scale-110"
             >
               <Mail size={20} />
