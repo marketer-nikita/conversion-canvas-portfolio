@@ -24,11 +24,11 @@ const Industries = () => {
                 key={index}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-gray-100 w-full sm:w-96"
               >
-                <div className="flex items-start mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                     <industry.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 leading-tight">
+                  <h3 className="text-lg font-bold text-gray-900 leading-tight flex-1 text-center">
                     {industry.industry}
                   </h3>
                 </div>
@@ -51,11 +51,11 @@ const Industries = () => {
                 key={index + 3}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-gray-100 w-full sm:w-96"
               >
-                <div className="flex items-start mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                     <industry.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 leading-tight">
+                  <h3 className="text-lg font-bold text-gray-900 leading-tight flex-1 text-center">
                     {industry.industry}
                   </h3>
                 </div>
