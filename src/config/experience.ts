@@ -10,41 +10,40 @@ import {
 
 export const experienceConfig = [
   {
-    role: "Performance Marketing Specialist",
-    company: "DigitalGrowth Agency",
-    period: "2023 - Present",
-    location: "Remote",
+    role: "Associate Media Buying",
+    company: "Z1 Tech",
+    period: "2024 - 2025",
+    location: "Gurgaon, India",
     description:
-      "Leading performance marketing campaigns for B2B and B2C clients across multiple industries.",
+      "Specialized in search arbitrage strategies to drive monetized traffic at scale.",
     achievements: [
-      "Increased client ROI by 40% through advanced campaign optimization",
-      "Managed $500K+ in monthly ad spend across Google and Meta platforms",
-      "Developed automated bidding strategies reducing CPA by 25%",
-      "Created comprehensive reporting dashboards for client transparency",
+      "Launched geo-targeted Google Ads via PMax & Display.",
+      "Achieved consistent CPA & RPC benchmarks across segments.",
+      "Built automated dashboards to track monetization quality.",
     ],
     metrics: [
-      { icon: TrendingUp, value: "40%", label: "ROI Increase" },
-      { icon: DollarSign, value: "$500K+", label: "Monthly Spend" },
-      { icon: Target, value: "25%", label: "CPA Reduction" },
+      { icon: TrendingUp, value: "40%", label: "RPC Increase" },
+      { icon: DollarSign, value: "$100K+", label: "Monthly Spend" },
+      { icon: Target, value: "30%", label: "CPA Reduction" },
     ],
   },
   {
-    role: "Digital Marketing Associate",
-    company: "TechStart Solutions",
-    period: "2022 - 2023",
-    location: "New York, NY",
+    role: "Digital Marketing Executive",
+    company: "Impact Digital Services Pvt. Ltd.",
+    period: "2023 - 2024",
+    location: "New Delhi, India",
     description:
-      "Focused on Google Ads management and lead generation for fintech and healthcare clients.",
+      "Executed full-funnel ad campaigns for B2B and B2C brands across sectors.",
     achievements: [
-      "Generated 200+ qualified leads monthly for B2B clients",
-      "Achieved 3.5x ROAS on Google Ads campaigns",
+      "Delivered 360° campaigns for fintech, healthcare, IT, and education.",
+      "Boosted landing page CVR through VWO & MS Clarity tests",
       "Implemented conversion tracking and attribution modeling",
-      "Collaborated with sales teams to optimize lead quality",
+      "Leveraged Factors.ai to improve lead insights & campaign targeting.",
     ],
     metrics: [
       { icon: Users, value: "200+", label: "Monthly Leads" },
-      { icon: TrendingUp, value: "3.5x", label: "ROAS" },
-      { icon: Target, value: "95%", label: "Quality Score" },
+      { icon: TrendingUp, value: "$150K+", label: "Cumulative Ad Spend" },
+      { icon: Target, value: "3.8%", label: "ROAS on Avg" },
     ],
   },
 ];

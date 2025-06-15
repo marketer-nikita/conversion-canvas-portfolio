@@ -1,3 +1,5 @@
+import { Description } from "@radix-ui/react-dialog";
+
 export const caseStudiesConfig = [
   {
     title: "Fintech Lead Generation Campaign",
@@ -8,47 +10,53 @@ export const caseStudiesConfig = [
     challenge:
       "High competition and expensive keywords in the financial services sector",
     solution:
-      "Implemented long-tail keyword strategy with advanced audience targeting",
+      "Ran Brand Awareness and Lead Generation campaigns on Google Ads and Facebook Ads",
     results: [
       { metric: "Cost Per Lead", value: "45%", change: "decrease" },
-      { metric: "Lead Quality Score", value: "60%", change: "increase" },
-      { metric: "Conversion Rate", value: "3.2%", change: "to" },
-      { metric: "Monthly Leads", value: "180+", change: "generated" },
+      { metric: "Lead Quality", value: "60%", change: "increase" },
+      { metric: "Conversion Rate", value: "3.2%", change: "increase" },
+      { metric: "Monthly Leads", value: "87%", change: "increase" },
     ],
     image: "photo-1563013544-824ae1b704d3",
   },
   {
-    title: "Healthcare Provider Growth",
-    client: "WellCare Medical Group",
-    industry: "Healthcare",
+    title: "B2B SaaS – ERP & EPM Software",
+    client: "Deflytics",
+    industry: "B2B SaaS",
     description:
-      "Meta Ads campaign targeting patients seeking specialized healthcare services in major metropolitan areas.",
+      "Multi-channel lead generation strategy for an ERP SaaS product targeting IT and manufacturing enterprises.",
     challenge:
-      "Strict compliance requirements and sensitive audience targeting",
+      "Low product awareness and weak engagement in a crowded SaaS space.",
     solution:
-      "Created compliant ad copy with geo-targeted campaigns and custom audiences",
+      "Built ABM-based LinkedIn + Google Ads with funnel retargeting via Factors.ai.",
     results: [
-      { metric: "Patient Appointments", value: "250%", change: "increase" },
-      { metric: "Cost Per Acquisition", value: "35%", change: "decrease" },
-      { metric: "Return on Ad Spend", value: "4.2x", change: "achieved" },
-      { metric: "New Patients", value: "320+", change: "acquired" },
+      { metric: "Google Ads CTR", value: "13%", change: "increase" },
+      { metric: "LinkedIn Ads CTR", value: "10%", change: "increase" },
+      { metric: "Warm account list built", value: "Yes", change: "achieved" },
+      { metric: "Email outreach Open rate", value: "25%", change: "increase" },
     ],
     image: "photo-1576091160399-112ba8d25d1f",
   },
   {
-    title: "Background Verification Scale-Up",
-    client: "SecureCheck Pro",
-    industry: "Background Verification",
+    title: "AdTech – Search Arbitrage",
+    client: "Plunic",
+    industry: "AdTech",
+    campaign: "AdTech Campaign Optimization",
     description:
-      "Scaled Google Ads campaigns for B2B background verification services targeting HR departments and recruitment agencies.",
-    challenge: "Niche market with limited search volume and high competition",
+      "High-volume campaign management for profitable search arbitrage across global traffic. Goal was to get traffic to publisher landing pages.",
+    challenge:
+      "Optimize CPA and maintain ROAS on $3K/day ad spend in Tier3 and Tier2 countires",
     solution:
-      "Developed multi-platform strategy combining Google Ads with LinkedIn campaigns",
+      "Ran 80+ campaigns with scripts, geo-bidding, and daily optimization.",
     results: [
-      { metric: "Enterprise Clients", value: "150%", change: "increase" },
-      { metric: "Monthly Revenue", value: "$85K", change: "generated" },
-      { metric: "Market Share", value: "12%", change: "captured" },
-      { metric: "Client Retention", value: "94%", change: "achieved" },
+      { metric: "ROAS", value: "1.82x", change: "increase" },
+      { metric: "Avg CPC", value: "$0.06", change: "decrease" },
+      { metric: "Regions scaled", value: "10+", change: "increase" },
+      {
+        metric: "CTR from creative A/B tests",
+        value: "25%",
+        change: "increase",
+      },
     ],
     image: "photo-1507003211169-0a1dd7228f2d",
   },
