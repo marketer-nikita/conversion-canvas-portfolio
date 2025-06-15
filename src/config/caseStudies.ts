@@ -3,7 +3,7 @@ import { Description } from "@radix-ui/react-dialog";
 export const caseStudiesConfig = [
   {
     title: "Fintech Lead Generation Campaign",
-    client: "CreditFlow Solutions",
+    client: "Mynd Fintech",
     industry: "Fintech",
     description:
       "Developed a comprehensive Google Ads strategy for a B2B fintech company specializing in credit management solutions.",
