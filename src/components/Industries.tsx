@@ -28,7 +28,7 @@ const Industries = () => {
                   <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                     <industry.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 leading-tight flex-1 text-center">
+                  <h3 className="text-lg font-bold text-gray-900 leading-tight flex-1">
                     {industry.industry}
                   </h3>
                 </div>
@@ -55,7 +55,7 @@ const Industries = () => {
                   <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                     <industry.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 leading-tight flex-1 text-center">
+                  <h3 className="text-lg font-bold text-gray-900 leading-tight flex-1">
                     {industry.industry}
                   </h3>
                 </div>
