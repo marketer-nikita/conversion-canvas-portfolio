@@ -4,7 +4,7 @@ import GoogleAnalyticsLogo from "../assets/image/Logo_Google_Analytics.svg";
 import Factorsailogo from "../assets/image/factors-ai-logo.svg";
 import Linkedinlogo from "../assets/image/LinkedIn_logo_initials.svg";
 import MSClarity from "../assets/image/Ms_Clarity-removebg-preview.svg";
-import Semrushlogo from "../assets/image/SEMrush-logo.svg";
+import GoogleTagManager from "../assets/image/Google-Tag-manager-Logo.svg";
 import VWOToollogo from "../assets/image/VWO-Logo-Color.svg";
 import ZohoCampaignlogo from "../assets/image/Zoho_Campaigns-removebg-preview.svg";
 import Canvalogo from "../assets/image/canva_logo.svg";
@@ -73,10 +73,10 @@ export const toolsConfig = [
     logo: VWOToollogo,
   },
   {
-    name: "SEMrush",
-    category: "SEO & Research",
+    name: "Google Tag Manager",
+    category: "Event Tracking & Tagging",
     proficiency: "Intermediate",
-    logo: Semrushlogo,
+    logo: GoogleTagManager,
   },
   {
     name: "Apollo.io",
