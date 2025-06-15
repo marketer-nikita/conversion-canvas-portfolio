@@ -6,15 +6,18 @@ import {
   Target,
   Users,
   BarChart,
+  MousePointer,
+  Search,
+  Zap,
 } from "lucide-react";
 
 const About = () => {
   const skills = [
-    { name: "Performance Media Buying", level: 95, icon: Target },
-    { name: "Full-Funnel Campaign Strategy", level: 90, icon: Users },
-    { name: "Conversion Rate Optimization (CRO)", level: 85, icon: Briefcase },
+    { name: "Performance Media Buying", level: 95, icon: MousePointer },
+    { name: "Full-Funnel Campaign Strategy", level: 90, icon: TrendingUp },
+    { name: "Conversion Rate Optimization (CRO)", level: 85, icon: Target },
     { name: "Analytics & Attribution", level: 92, icon: BarChart },
-    { name: "Automation & Reporting", level: 80, icon: BarChart },
+    { name: "Automation & Reporting", level: 80, icon: Zap },
   ];
 
   const highlights = [
