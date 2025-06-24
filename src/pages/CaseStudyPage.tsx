@@ -2,9 +2,34 @@
 import React from "react";
 import { ArrowLeft, Target, Users, TrendingUp, Award } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { toolsConfig } from "@/config/tools";
 
 const CaseStudyPage = () => {
   const navigate = useNavigate();
+
+  // Map tools used in case study to their config data
+  const getToolConfig = (toolName: string) => {
+    const toolMappings: { [key: string]: string } = {
+      "Facebook Ads Manager": "Meta Ads Manager",
+      "LinkedIn Campaign Manager": "LinkedIn Ads",
+      "Canva": "Canva",
+      "Figma": "Figma", // This might not exist in config, will fallback to emoji
+      "Google Analytics 4": "Google Analytics 4",
+      "Factors.ai": "Factors.ai"
+    };
+    
+    const mappedName = toolMappings[toolName] || toolName;
+    return toolsConfig.find(tool => tool.name === mappedName);
+  };
+
+  const caseStudyTools = [
+    { name: "Facebook Ads Manager", fallbackIcon: "📘" },
+    { name: "LinkedIn Campaign Manager", fallbackIcon: "💼" },
+    { name: "Canva", fallbackIcon: "🎨" },
+    { name: "Figma", fallbackIcon: "🎯" },
+    { name: "Google Analytics 4", fallbackIcon: "📊" },
+    { name: "Factors.ai", fallbackIcon: "🔍" }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -223,21 +248,26 @@ const CaseStudyPage = () => {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {[
-              { name: "Facebook Ads Manager", icon: "📘" },
-              { name: "LinkedIn Campaign Manager", icon: "💼" },
-              { name: "Canva", icon: "🎨" },
-              { name: "Figma", icon: "🎯" },
-              { name: "Google Analytics 4", icon: "📊" },
-              { name: "Factors.ai", icon: "🔍" }
-            ].map((tool, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                  <span className="text-2xl">{tool.icon}</span>
+            {caseStudyTools.map((tool, index) => {
+              const toolConfig = getToolConfig(tool.name);
+              
+              return (
+                <div key={index} className="text-center group">
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                    {toolConfig?.logo ? (
+                      <img
+                        src={toolConfig.logo}
+                        alt={tool.name}
+                        className="w-8 h-8 object-contain"
+                      />
+                    ) : (
+                      <span className="text-2xl">{tool.fallbackIcon}</span>
+                    )}
+                  </div>
+                  <div className="text-sm text-gray-700 font-medium">{tool.name}</div>
                 </div>
-                <div className="text-sm text-gray-700 font-medium">{tool.name}</div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
