@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowRight, Mail, Linkedin } from "lucide-react";
 import { profileConfig } from "@/config/profile";
@@ -44,7 +45,7 @@ const Hero = () => {
             <div className="relative">
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 p-2">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                  src="/lovable-uploads/eaeba558-40c0-4db4-ba29-02ff401b8d54.png"
                   alt={`${profileConfig.name} - ${profileConfig.title}`}
                   className="w-full h-full rounded-full object-cover"
                 />
