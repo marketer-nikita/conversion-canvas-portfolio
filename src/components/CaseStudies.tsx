@@ -1,5 +1,7 @@
+
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { caseStudiesConfig } from "@/config/caseStudies";
 
 const CaseStudies = () => {
@@ -82,6 +84,19 @@ const CaseStudies = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* Add navigation link to detailed case study for Fintech */}
+                {study.industry === "Fintech" && (
+                  <div className="mt-6 pt-4 border-t border-gray-200">
+                    <Link
+                      to="/case-study"
+                      className="inline-flex items-center text-pink-600 hover:text-pink-700 font-medium transition-colors duration-200"
+                    >
+                      View Detailed Case Study
+                      <ArrowUpRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           ))}
