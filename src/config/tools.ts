@@ -5,7 +5,7 @@ import Factorsailogo from "../assets/image/factors-ai-logo.svg";
 import Linkedinlogo from "../assets/image/LinkedIn_logo_initials.svg";
 import MSClarity from "../assets/image/Ms_Clarity-removebg-preview.svg";
 import GoogleTagManager from "../assets/image/Google-Tag-manager-Logo.svg";
-import VWOToollogo from "../assets/image/VWO-Logo-Color.svg";
+import VWOToollogo from "../assets/image/VWO_Tool_Logo.svg";
 import ZohoCampaignlogo from "../assets/image/Zoho_Campaigns-removebg-preview.svg";
 import Canvalogo from "../assets/image/canva_logo.svg";
 import Apolloiologo from "../assets/image/Apollo.io_Logo.svg";
