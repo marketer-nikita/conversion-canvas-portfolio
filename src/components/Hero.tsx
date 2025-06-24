@@ -45,7 +45,7 @@ const Hero = () => {
             <div className="relative">
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 p-2">
                 <img
-                  src="/lovable-uploads/eaeba558-40c0-4db4-ba29-02ff401b8d54.png"
+                  src="/lovable-uploads/02ece727-1d4b-407f-9ad8-81ad22872104.png"
                   alt={`${profileConfig.name} - ${profileConfig.title}`}
                   className="w-full h-full rounded-full object-cover"
                 />
