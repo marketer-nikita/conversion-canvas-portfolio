@@ -19,7 +19,7 @@ export const industriesConfig = [
     icon: Heart,
     description:
       "Patient acquisition for advanced, low-risk heart surgery procedures",
-    result: "300+ qualified leads",
+    result: "105+ qualified leads",
   },
   {
     industry: "Education (Executive MBA for Working Professionals)",

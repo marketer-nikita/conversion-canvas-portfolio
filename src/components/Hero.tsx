@@ -1,9 +1,15 @@
-
 import React from "react";
-import { ArrowRight, Mail, Linkedin } from "lucide-react";
+import { ArrowRight, Mail, Linkedin, Download } from "lucide-react";
 import { profileConfig } from "@/config/profile";
 
 const Hero = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="home"
@@ -21,22 +27,31 @@ const Hero = () => {
               {profileConfig.subtitle}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a
-                href={`mailto:${profileConfig.email}`}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+              <button
+                onClick={scrollToContact}
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-pink-400 to-purple-400 hover:from-pink-500 hover:to-purple-500 transition-all duration-200"
               >
                 <Mail className="w-5 h-5 mr-2" />
                 Get in Touch
+              </button>
+              <a
+                href="https://drive.google.com/file/d/1xW76wg_ov3IkzrtNLUC0nhys6NqNg2p-/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200"
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Download Resume
               </a>
               <a
                 href={profileConfig.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200"
+                className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200"
+                title="LinkedIn Profile"
               >
-                <Linkedin className="w-5 h-5 mr-2" />
-                LinkedIn
+                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>
