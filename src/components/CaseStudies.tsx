@@ -26,9 +26,9 @@ const CaseStudies = () => {
             >
               <div className="h-32 bg-gradient-to-br from-pink-400 to-purple-400 relative overflow-hidden">
                 <img
-                  src={`https://images.unsplash.com/${study.image}?w=400&h=128&fit=crop`}
+                  src={study.image}
                   alt={study.title}
-                  className="w-full h-full object-cover opacity-20"
+                  className="w-full h-full object-cover opacity-10"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">

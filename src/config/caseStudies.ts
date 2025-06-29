@@ -1,4 +1,7 @@
 import { Description } from "@radix-ui/react-dialog";
+import fintechImage from "@/assets/image/Fintech_Image.webp";
+import saasImage from "@/assets/image/SaaS_Image.webp";
+import adtechImage from "@/assets/image/Ad_tech_image.webp";
 
 export const caseStudiesConfig = [
   {
@@ -17,7 +20,7 @@ export const caseStudiesConfig = [
       { metric: "Conversion Rate", value: "3.2%", change: "increase" },
       { metric: "Monthly Leads", value: "87%", change: "increase" },
     ],
-    image: "photo-1563013544-824ae1b704d3",
+    image: fintechImage,
   },
   {
     title: "B2B SaaS – ERP & EPM Software",
@@ -35,7 +38,7 @@ export const caseStudiesConfig = [
       { metric: "Warm account list built", value: "Yes", change: "achieved" },
       { metric: "Email outreach Open rate", value: "25%", change: "increase" },
     ],
-    image: "photo-1576091160399-112ba8d25d1f",
+    image: saasImage,
   },
   {
     title: "AdTech – Search Arbitrage",
@@ -58,6 +61,6 @@ export const caseStudiesConfig = [
         change: "increase",
       },
     ],
-    image: "photo-1507003211169-0a1dd7228f2d",
+    image: adtechImage,
   },
 ];
