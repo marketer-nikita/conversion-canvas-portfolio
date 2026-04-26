@@ -11,10 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center pt-20 pb-20 px-4 sm:px-6 lg:px-8"
-    >
+    <section id="home" className="min-h-screen flex items-center pt-20 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
@@ -36,7 +33,7 @@ const Hero = () => {
                 Get in Touch
               </button>
               <a
-                href="https://drive.google.com/file/d/1xW76wg_ov3IkzrtNLUC0nhys6NqNg2p-/view"
+                href={profileConfig.resumeLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200"
