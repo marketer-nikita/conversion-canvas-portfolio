@@ -12,4 +12,5 @@ export const profileConfig = {
     roiBoost: "40%",
   },
   services: ["Google Ads", "Meta Ads", "B2B Lead Generation", "Analytics"],
+  resumeLink: "https://drive.google.com/file/d/1qvcEqONOQxTkWaYkXilKMZPX6IHlVAzE/view",
 };

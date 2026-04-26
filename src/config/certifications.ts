@@ -1,5 +1,19 @@
 export const certificationsConfig = [
   {
+    name: "Young Urban Project: Advance Performance Marketing Cohort",
+    platform: "Young Urban Project",
+    date: "2025",
+    logo: "https://media.licdn.com/dms/image/v2/C510BAQH1OPVuUYckEA/company-logo_200_200/company-logo_200_200/0/1630615962555?e=2147483647&v=beta&t=F0v0O5DLkuwMKlYg-NyYPJGu-Q10JCloNV-gG5E2O_Q",
+    skills: [
+      "Advanced Performance Marketing",
+      "Campaign Strategy",
+      "Data Analysis",
+      "Industry Insights",
+    ],
+    verified: true,
+    link: "https://drive.google.com/file/d/1Kf26JequWObEEKh5SWmDs0tIY0kLaCfm/view",
+  },
+  {
     name: "Fundamentals of Digital Marketing",
     platform: "Google Digital Garage",
     date: "2023",

@@ -10,6 +10,7 @@ import ZohoCampaignlogo from "../assets/image/Zoho_Campaigns-removebg-preview.sv
 import Canvalogo from "../assets/image/canva_logo.svg";
 import Apolloiologo from "../assets/image/Apollo.io_Logo.svg";
 import GoogleAdsEditorlogo from "../assets/image/Google_Ads_Editor_logo.svg";
+import LookerStudioLogo from "../assets/image/looker-icon.svg";
 
 export const toolsConfig = [
   {
@@ -49,10 +50,10 @@ export const toolsConfig = [
     logo: Factorsailogo,
   },
   {
-    name: "Canva",
-    category: "Creative Design and Branding",
+    name: "Looker Studio",
+    category: "Data Visualization and Reporting",
     proficiency: "Advanced",
-    logo: Canvalogo,
+    logo: LookerStudioLogo,
   },
   {
     name: "Zoho Campaigns",

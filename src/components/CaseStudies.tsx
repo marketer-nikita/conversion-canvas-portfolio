@@ -1,6 +1,18 @@
-import React from "react";
-import { ArrowUpRight } from "lucide-react";
 import { caseStudiesConfig } from "@/config/caseStudies";
+
+const renderBulletedText = (content: string | string[]) => {
+  if (Array.isArray(content)) {
+    return (
+      <ul className="list-disc list-outside pl-5 space-y-2 text-gray-600 text-sm">
+        {content.map((item, idx) => (
+          <li key={idx}>{item}</li>
+        ))}
+      </ul>
+    );
+  }
+
+  return <p className="text-gray-600 text-sm">{content}</p>;
+};
 
 const CaseStudies = () => {
   return (
@@ -10,9 +22,7 @@ const CaseStudies = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Case Studies
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Case Studies</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Real results from real campaigns across diverse industries
           </p>
@@ -41,42 +51,28 @@ const CaseStudies = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {study.title}
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{study.title}</h3>
                 <p className="text-gray-600 mb-4">{study.description}</p>
 
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">
-                      Challenge
-                    </h4>
-                    <p className="text-gray-600 text-sm">{study.challenge}</p>
+                    <h4 className="font-semibold text-gray-900 mb-1">Challenges</h4>
+                    {renderBulletedText(study.challenge)}
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">
-                      Solution
-                    </h4>
-                    <p className="text-gray-600 text-sm">{study.solution}</p>
+                    <h4 className="font-semibold text-gray-900 mb-1">Solutions</h4>
+                    {renderBulletedText(study.solution)}
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">
-                      Results
-                    </h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Results</h4>
                     <div className="grid grid-cols-2 gap-2">
                       {study.results.map((result, i) => (
                         <div key={i} className="bg-pink-50 rounded-lg p-2">
-                          <div className="text-sm font-semibold text-pink-600">
-                            {result.metric}
-                          </div>
-                          <div className="text-lg font-bold text-gray-900">
-                            {result.value}
-                          </div>
-                          <div className="text-xs text-gray-600">
-                            {result.change}
-                          </div>
+                          <div className="text-sm font-semibold text-pink-600">{result.metric}</div>
+                          <div className="text-lg font-bold text-gray-900">{result.value}</div>
+                          <div className="text-xs text-gray-600">{result.change}</div>
                         </div>
                       ))}
                     </div>
