@@ -200,17 +200,17 @@
 }
 /* On phones the objects stack in reading order and scrolling stays untouched. */
 @media (max-width: 760px) {
-  .dk-hero { height: auto; max-height: none; display: flex; flex-direction: column; gap: 18px; padding: 8px 16px 32px; }
+  .dk-hero { height: auto; max-height: none; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 18px 12px; padding: 8px 16px 32px; }
   .dk-strip, .dk-note, .dk-brief, .dk-print { position: relative; left: auto; right: auto; top: auto; }
   .dk-drag { cursor: auto; }
-  .dk-strip { font-size: 12.2vw; align-self: flex-start; margin-bottom: -6px; }
-  .dk-strip--2 { align-self: flex-end; }
-  .dk-note--yellow { align-self: flex-start; }
-  .dk-note--pink { align-self: flex-end; margin-top: -48px; }
-  .dk-note { min-height: 0; }
-  .dk-print { align-self: flex-end; margin-top: -148px; width: 42vw; }
+  .dk-strip { flex: 0 1 auto; max-width: 100%; font-size: 15vw; line-height: 0.98; white-space: normal; clip-path: none; }
+  .dk-strip--2 { margin: -12px 0 0 auto; }
+  .dk-print { order: 2; flex: 0 0 auto; width: 42vw; }
   .dk-print figcaption { font-size: 18px; }
-  .dk-brief { width: 100%; }
+  .dk-note { min-height: 0; }
+  .dk-note--yellow { order: 1; flex: 1 1 0; width: auto; min-width: 0; padding: 14px; }
+  .dk-brief { order: 3; width: 100%; }
+  .dk-note--pink { order: 4; width: 62vw; margin: -8px 0 0 auto; }
   .dk-hint { display: none; }
   .dk-pads { grid-template-columns: minmax(0, 1fr); }
 }
