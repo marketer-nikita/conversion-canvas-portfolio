@@ -29,6 +29,9 @@ const METHOD = [
 const CIRCLE = "M52 6 C24 3 5 10 4 21 C3 33 28 38 55 36 C80 34 97 27 96 17 C95 7 72 3 42 7";
 const UNDERLINE = "M2 12 C24 6 44 15 62 9 C74 5 88 8 98 10";
 
+// Numbers along the mat's major grid lines, every 200px like the background.
+const RULER = Array.from({ length: 16 }, (_, i) => (i + 1) * 10);
+
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 
 // Puts anything with .dk-drag under the pointer. Links inside still click, and phones keep normal scrolling.
@@ -140,6 +143,27 @@ const Pen = ({ path, className = "", delay = 0 }: { path: string; className?: st
   );
 };
 
+// The closing CTA lands like a rubber stamp the first time it scrolls into view.
+const Stamp = () => {
+  const ref = useRef<HTMLAnchorElement>(null);
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          node.classList.add("is-stamped");
+          io.disconnect();
+        }
+      },
+      { threshold: 0.6 }
+    );
+    io.observe(node);
+    return () => io.disconnect();
+  }, []);
+  return <a ref={ref} className="dk-stamp" href={AUDIT_MAIL}>Get a free ad audit</a>;
+};
+
 const Page = () => {
   const rootRef = useRef<HTMLDivElement>(null);
   const { moved, tidy } = useDesk(rootRef);
@@ -151,6 +175,9 @@ const Page = () => {
           Tidy up the desk
         </button>
       )}
+      <div className="dk-ruler" aria-hidden="true">
+        {RULER.map((mark) => <span key={mark}>{mark}</span>)}
+      </div>
       <header className="dk-top">
         <a href="#home">{profileConfig.name}</a>
         <nav aria-label="Sections">
@@ -164,7 +191,7 @@ const Page = () => {
       <main>
         <section id="home" className="dk-hero">
           <h1>
-            <span className="dk-strip dk-drag" style={{ "--r": "-2.4deg", "--d": 0 } as React.CSSProperties}>I make ad budgets</span>
+            <span className="dk-strip dk-drag" style={{ "--r": "-2.4deg", "--d": 0 } as React.CSSProperties}>I make ad budgets</span>{" "}
             <span className="dk-strip dk-strip--2 dk-drag" style={{ "--r": "1.3deg", "--d": 1 } as React.CSSProperties}>
               earn their keep.
               <Pen path={UNDERLINE} className="dk-under" delay={1500} />
@@ -187,7 +214,10 @@ const Page = () => {
 
           <div className="dk-brief dk-drag" style={{ "--r": "-1.5deg", "--d": 4 } as React.CSSProperties}>
             <p>Google and Meta campaigns for B2B, e-commerce and local brands. Tested every week, reported plainly, and judged on revenue, not clicks.</p>
-            <a href={AUDIT_MAIL}>Get a free ad audit</a>
+            <div className="dk-brief-cta">
+              <a href={AUDIT_MAIL}>Get a free ad audit</a>
+              <span>I reply within 24 hours</span>
+            </div>
           </div>
 
           <div className="dk-note dk-note--pink dk-drag" style={{ "--r": "6deg", "--d": 5 } as React.CSSProperties}>
@@ -239,7 +269,12 @@ const Page = () => {
             <span className="dk-tape" aria-hidden="true" />
             <h2>How I run an account</h2>
             <ol>
-              {METHOD.map((step) => <li key={step}>{step}</li>)}
+              {METHOD.map((step, index) => (
+                <li key={step}>
+                  <span className="dk-num" aria-hidden="true">{index + 1}<Pen path={CIRCLE} className="dk-round" /></span>
+                  <span>{step}</span>
+                </li>
+              ))}
             </ol>
           </div>
         </section>
@@ -288,11 +323,11 @@ const Page = () => {
 
         <section id="tools-skills" className="dk-section">
           <h2>Stickers on my laptop</h2>
-          <ul className="dk-stickers">
+          <ul className="dk-stickers dk-laptop">
             {toolsConfig.map((tool, index) => (
               <li key={tool.name} className="dk-sticker dk-drag" style={{ "--r": `${[-5, 3, -2, 6, -4, 2][index % 6]}deg` } as React.CSSProperties}>
                 <img src={tool.logo} alt="" draggable={false} />
-                <span>{tool.name}</span>
+                <span>{tool.name}<small>{tool.proficiency}</small></span>
               </li>
             ))}
           </ul>
@@ -302,7 +337,7 @@ const Page = () => {
           <div className="dk-letter">
             <h2>Leave your ad account on my desk</h2>
             <p>I'll audit it for free and show you where your budget leaks. I reply within 24 hours, with no commitment.</p>
-            <a className="dk-stamp" href={AUDIT_MAIL}>Get a free ad audit</a>
+            <Stamp />
             <p className="dk-sign">Nikita</p>
             <p className="dk-links">
               <a href={`mailto:${profileConfig.email}`}>{profileConfig.email}</a>

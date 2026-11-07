@@ -21,8 +21,12 @@
   line-height: 1.45;
   overflow-x: clip;
 }
-.dk :focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+/* Two-tone ring, so focus shows on the green mat, white paper and yellow pad alike. */
+.dk :focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 5px var(--yellow); }
 .dk a { color: inherit; text-underline-offset: 3px; }
+.dk-ruler { position: absolute; top: 2px; left: 0; display: flex; color: rgb(255 255 255 / 0.62); font-size: 10px; line-height: 1; pointer-events: none; white-space: nowrap; }
+.dk-ruler span { width: 200px; text-align: right; padding-right: 4px; flex: none; }
+.dk { position: relative; }
 .dk-top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px clamp(16px, 3vw, 40px); color: var(--paper); font-weight: 700; position: relative; z-index: 2; }
 .dk-top a { text-decoration: none; }
 .dk-top a:hover { text-decoration: underline; }
@@ -110,7 +114,7 @@
   z-index: 2;
 }
 .dk-note--yellow { background: var(--yellow); left: 5%; top: calc(var(--below) + 8px); }
-.dk-note--pink { background: var(--pink); left: 53%; top: calc(var(--below) + 224px); min-height: 0; width: clamp(180px, 15vw, 220px); }
+.dk-note--pink { background: var(--pink); left: calc(30% + clamp(300px, 27vw, 410px) - 40px); top: calc(var(--below) + 224px); min-height: 0; width: clamp(180px, 15vw, 220px); }
 .dk-note-big { font-size: 1.95em; margin: 18px 0 14px; }
 .dk-note-big span, .dk-result span { position: relative; display: inline-block; }
 .dk-brief {
@@ -128,8 +132,11 @@
   line-height: 28px;
   font-size: 17px;
 }
-.dk-brief a { display: inline-block; margin-top: 14px; background: var(--red); color: var(--paper); padding: 8px 16px; line-height: 1.5; font-weight: 700; text-decoration: none; }
-.dk-brief a:hover { background: var(--ink); }
+.dk-brief-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 14px; }
+.dk-brief a { background: var(--red); color: var(--paper); padding: 13px 22px; line-height: 1.2; font-size: clamp(18px, 1.5vw, 21px); font-weight: 800; text-decoration: none; box-shadow: 0 3px 0 #8d0b12; transition: translate 0.08s, box-shadow 0.08s; }
+.dk-brief a:hover { background: #b70e17; }
+.dk-brief a:active { translate: 0 3px; box-shadow: 0 0 0 #8d0b12; }
+.dk-brief-cta span { font-family: "Reenie Beanie", cursive; color: var(--red); font-size: 27px; line-height: 1; }
 .dk-hint { position: absolute; left: 6%; top: calc(var(--below) + 320px); color: var(--paper); font-family: "Reenie Beanie", cursive; font-size: 32px; line-height: 1; transform: rotate(-3deg); }
 
 /* The pen: path length normalised to 1, then the dash is pulled back. */
@@ -181,9 +188,9 @@
 }
 .dk-method .dk-tape { top: -12px; }
 .dk-method h2 { font-size: clamp(30px, 4vw, 56px); line-height: 1.05; font-weight: 800; font-stretch: 112%; letter-spacing: -0.03em; margin-bottom: 18px; }
-.dk-method ol { counter-reset: step; }
-.dk-method li { counter-increment: step; display: grid; grid-template-columns: 54px minmax(0, 1fr); align-items: start; font-family: "Reenie Beanie", cursive; font-size: clamp(30px, 3vw, 42px); line-height: 1.08; padding: 8px 0; }
-.dk-method li::before { content: counter(step) "."; color: var(--red); }
+.dk-method li { display: grid; grid-template-columns: 58px minmax(0, 1fr); align-items: start; font-family: "Reenie Beanie", cursive; font-size: clamp(30px, 3vw, 42px); line-height: 1.08; padding: 8px 0; }
+.dk-num { position: relative; justify-self: start; margin-left: 8px; padding: 0 7px; color: var(--red); }
+.dk-num .dk-round { inset: -6% -30%; width: 160%; height: 112%; }
 
 .dk-section#industries { padding-top: clamp(40px, 6vw, 80px); }
 .dk-cards { display: flex; flex-wrap: wrap; gap: 14px; }
@@ -220,9 +227,27 @@
 .dk-certs a { font-weight: 700; display: block; line-height: 1.25; }
 .dk-certs span { font-size: 13px; color: #55615b; }
 
-.dk-stickers { display: flex; flex-wrap: wrap; gap: 14px 16px; }
-.dk-sticker { display: flex; align-items: center; gap: 10px; background: var(--paper); padding: 9px 16px 9px 10px; border-radius: 999px; box-shadow: 0 0 0 3px var(--paper), var(--shadow); font-weight: 700; }
-.dk-sticker img { width: 28px; height: 28px; object-fit: contain; pointer-events: none; }
+/* A laptop lid: dark anodised metal, big radius, a hinge along the bottom. */
+.dk-laptop {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(22px, 4vw, 52px) clamp(16px, 4vw, 52px) clamp(30px, 5vw, 64px);
+  background: linear-gradient(160deg, #3a3f44, #24282c 70%);
+  border-radius: 20px 20px 8px 8px;
+  border-bottom: 10px solid #15181a;
+  box-shadow: 0 4px 3px rgb(0 0 0 / 0.3), 0 18px 26px -10px rgb(0 0 0 / 0.55);
+  justify-content: center;
+}
+.dk-stickers { display: flex; flex-wrap: wrap; gap: 16px 20px; }
+.dk-sticker { display: flex; align-items: center; gap: 10px; background: var(--paper); padding: 9px 18px 9px 11px; box-shadow: 0 1px 2px rgb(0 0 0 / 0.5); font-weight: 750; line-height: 1.15; border-radius: 999px; }
+.dk-sticker small { display: block; font-size: 12px; font-weight: 500; color: #55615b; }
+.dk-sticker img { width: 32px; height: 32px; object-fit: contain; pointer-events: none; }
+/* No two stickers are cut the same. */
+.dk-sticker:nth-child(3n + 2) { border-radius: 10px; background: var(--yellow); }
+.dk-sticker:nth-child(3n + 2) small { color: var(--ink); }
+.dk-sticker:nth-child(5n) { border-radius: 2px; }
+.dk-sticker:nth-child(4n + 1) { margin-top: 10px; }
+.dk-sticker:nth-child(3n) { margin-top: -6px; }
 
 .dk-letter { position: relative; max-width: 780px; margin: 0 auto 40px; background: var(--paper); padding: clamp(24px, 5vw, 56px); box-shadow: var(--shadow); transform: rotate(-0.8deg); }
 .dk-letter h2 { font-size: clamp(36px, 5.6vw, 76px); line-height: 1; font-weight: 800; font-stretch: 112%; letter-spacing: -0.035em; color: var(--ink); }
@@ -240,6 +265,8 @@
   transition: background 0.12s, color 0.12s;
 }
 .dk-stamp:hover { background: var(--red); color: var(--paper) !important; }
+.dk-stamp.is-stamped { animation: dk-stamp 0.34s cubic-bezier(0.5, 0, 0.9, 0.4); }
+@keyframes dk-stamp { from { scale: 2.2; } 70% { scale: 0.96; } to { scale: 1; } }
 .dk-letter .dk-sign { font-family: "Reenie Beanie", cursive; font-size: 54px; line-height: 1; margin-top: 20px; }
 .dk-letter .dk-links { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; }
 
@@ -262,9 +289,12 @@
   .dk-brief { order: 3; width: 100%; }
   .dk-note--pink { order: 4; width: 62vw; margin: -8px 0 0 auto; }
   .dk-hint { display: none; }
+  .dk-note--pink { left: auto; }
+  .dk-laptop { border-radius: 14px 14px 6px 6px; }
+  .dk-ruler { display: none; }
   .dk-pads { grid-template-columns: minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   .dk-pen path { transition: none; }
-  .dk-drag, .dk-drag.is-held, .dk.is-tidying .dk-drag, .dk-stamp { transition: none; }
+  .dk-drag, .dk-drag.is-held, .dk.is-tidying .dk-drag, .dk-stamp, .dk-brief a { transition: none; }
 }
