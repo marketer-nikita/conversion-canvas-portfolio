@@ -141,7 +141,7 @@
 .dk-hint { position: absolute; left: 6%; top: calc(var(--below) + 320px); color: var(--paper); font-family: "Reenie Beanie", cursive; font-size: 34px; line-height: 1; transform: rotate(-3deg); }
 
 /* Reenie Beanie is hairline thin, so every handwritten line gets a touch more ink. */
-.dk-print figcaption, .dk-note, .dk-brief-cta span, .dk-hint, .dk-hand, .dk-card strong, .dk-method li, .dk-want span, .dk-tidy, .dk-letter .dk-sign {
+.dk-print figcaption, .dk-note, .dk-brief-cta span, .dk-hint, .dk-hand, .dk-method li, .dk-want span, .dk-tidy, .dk-letter .dk-sign {
   -webkit-text-stroke: 0.3px currentColor;
   letter-spacing: 0.012em;
 }
@@ -164,7 +164,7 @@
 .dk-sheet--2 { transform: rotate(-0.5deg) translateY(10px); }
 .dk-clip { position: absolute; top: -16px; right: 28px; width: 18px; height: 54px; border: 3px solid #8b9aa1; border-radius: 9px; border-bottom-color: #6f7d84; }
 .dk-sheet-meta { font-size: 13px; color: #55615b; }
-.dk-sheet h3, .dk-card h3, .dk-pad h3 { font-size: 22px; font-weight: 800; line-height: 1.12; letter-spacing: -0.015em; }
+.dk-sheet h3, .dk-pad h3 { font-size: 22px; font-weight: 800; line-height: 1.12; letter-spacing: -0.015em; }
 .dk-result { font-size: clamp(38px, 3.8vw, 56px); line-height: 1; font-weight: 800; font-stretch: 112%; letter-spacing: -0.035em; margin: 26px 0 14px 12px; }
 .dk-hand { font-family: "Reenie Beanie", cursive; color: var(--red); font-size: 31px; line-height: 1; transform: rotate(-2deg); margin-bottom: 14px; }
 .dk-sheet table { width: 100%; font-size: 14px; border-collapse: collapse; margin-bottom: 14px; }
@@ -200,20 +200,49 @@
 .dk-num .dk-round { inset: -6% -30%; width: 160%; height: 112%; }
 
 .dk-section#industries { padding-top: clamp(40px, 6vw, 80px); }
-.dk-cards { display: flex; flex-wrap: wrap; gap: 14px; }
-.dk-card {
-  flex: 1 1 230px;
-  padding: 16px;
+.dk-file { max-width: 900px; margin: 0 auto; }
+.dk-file-tabs { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 14px; position: relative; z-index: 2; }
+.dk-file-tabs button {
+  padding: 9px 16px 12px;
+  margin-bottom: -4px;
+  background: #cfe0d7;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 -1px 2px rgb(0 0 0 / 0.2);
+  transition: translate 0.15s, background 0.15s;
+}
+.dk-file-tabs button:hover { background: var(--yellow); }
+.dk-file-tabs button[aria-selected="true"] { background: var(--paper); translate: 0 -5px; }
+.dk-file-stack { position: relative; z-index: 3; display: grid; }
+.dk-file-stack::before, .dk-file-stack::after { content: ""; position: absolute; inset: 0; box-shadow: var(--shadow); z-index: -1; }
+.dk-file-stack::before { transform: rotate(-1.4deg) translate(-4px, 6px); background: #e4ebe7; }
+.dk-file-stack::after { transform: rotate(1deg) translate(5px, 4px); background: #f0f4f1; }
+.dk-file-card {
+  grid-area: 1 / 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 20px clamp(20px, 4vw, 48px);
+  align-items: center;
+  min-height: 300px;
+  padding: 52px clamp(22px, 4vw, 44px) clamp(22px, 4vw, 44px);
   background-color: var(--paper);
-  background-image: linear-gradient(var(--red), var(--red)), repeating-linear-gradient(transparent 0 23px, var(--lined) 23px 24px);
+  background-image: linear-gradient(var(--red), var(--red)), repeating-linear-gradient(transparent 0 31px, var(--lined) 31px 32px);
   background-size: 100% 2px, 100% 100%;
-  background-position: 0 42px, 0 0;
+  background-position: 0 30px, 0 0;
   background-repeat: no-repeat;
   box-shadow: var(--shadow);
+  visibility: hidden;
 }
-.dk-card h3 { font-size: 18px; line-height: 1.2; white-space: nowrap; }
-.dk-card p { font-size: 14px; line-height: 24px; margin-top: 14px; }
-.dk-card strong { display: block; font-family: "Reenie Beanie", cursive; color: var(--red); font-size: 34px; line-height: 1; font-weight: 400; margin-top: 8px; }
+.dk-file-card.is-front { visibility: visible; }
+.dk-file-card h3 { font-size: clamp(28px, 3.2vw, 42px); font-weight: 800; font-stretch: 112%; letter-spacing: -0.03em; line-height: 1.08; }
+.dk-file-card p { margin-top: 12px; font-size: 18px; line-height: 32px; }
+.dk-file-card strong { font-family: "Reenie Beanie", cursive; font-weight: 400; color: var(--red); font-size: clamp(50px, 6.4vw, 84px); line-height: 0.95; -webkit-text-stroke: 0.5px currentColor; transform: rotate(-3deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .dk-file-card.is-front { animation: dk-pull 0.26s cubic-bezier(0.2, 0.9, 0.3, 1.15); }
+}
+@keyframes dk-pull { from { transform: translateY(14px) rotate(0.8deg); opacity: 0.4; } }
 
 .dk-pads { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: clamp(16px, 3vw, 40px); align-items: start; }
 .dk-pad {
@@ -281,8 +310,10 @@
   .dk-note--pink { left: auto; }
   .dk-ruler { display: none; }
   .dk-pads { grid-template-columns: minmax(0, 1fr); }
+  .dk-file-card { grid-template-columns: minmax(0, 1fr); align-content: start; }
+  .dk-file-tabs button { padding: 7px 11px 10px; font-size: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .dk-pen path { transition: none; }
-  .dk-drag, .dk-drag.is-held, .dk.is-tidying .dk-drag, .dk-stamp, .dk-brief a { transition: none; }
+  .dk-drag, .dk-drag.is-held, .dk.is-tidying .dk-drag, .dk-stamp, .dk-brief a, .dk-file-tabs button { transition: none; }
 }

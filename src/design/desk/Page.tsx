@@ -143,6 +143,64 @@ const Pen = ({ path, className = "", delay = 0 }: { path: string; className?: st
   );
 };
 
+const INDUSTRIES = industriesConfig.map((item) => {
+  const [name, detail] = item.industry.replace(")", "").split(" (");
+  return { name, detail, description: item.description, result: item.result };
+});
+
+// A card file: the tabs name each industry, and one card sits at the front.
+const CardFile = () => {
+  const [active, setActive] = useState(0);
+  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const onKey = (e: React.KeyboardEvent) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    e.preventDefault();
+    const next = (active + (e.key === "ArrowRight" ? 1 : -1) + INDUSTRIES.length) % INDUSTRIES.length;
+    setActive(next);
+    tabs.current[next]?.focus();
+  };
+  return (
+    <div className="dk-file">
+      <div className="dk-file-tabs" role="tablist" aria-label="Industries" onKeyDown={onKey}>
+        {INDUSTRIES.map((item, index) => (
+          <button
+            key={item.name}
+            ref={(node) => { tabs.current[index] = node; }}
+            type="button"
+            role="tab"
+            id={`dk-tab-${index}`}
+            aria-selected={index === active}
+            aria-controls={`dk-card-${index}`}
+            tabIndex={index === active ? 0 : -1}
+            onClick={() => setActive(index)}
+          >
+            {item.name}
+          </button>
+        ))}
+      </div>
+      {/* Every card shares one grid cell, so the page keeps its height when the tab changes. */}
+      <div className="dk-file-stack">
+        {INDUSTRIES.map((item, index) => (
+          <div
+            key={item.name}
+            id={`dk-card-${index}`}
+            className={`dk-file-card${index === active ? " is-front" : ""}`}
+            role="tabpanel"
+            aria-labelledby={`dk-tab-${index}`}
+            aria-hidden={index !== active}
+          >
+            <div>
+              <h3>{item.detail}</h3>
+              <p>{item.description}.</p>
+            </div>
+            <strong>{item.result}</strong>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 // The closing CTA lands like a rubber stamp the first time it scrolls into view.
 const Stamp = () => {
   const ref = useRef<HTMLAnchorElement>(null);
@@ -281,15 +339,7 @@ const Page = () => {
 
         <section id="industries" className="dk-section">
           <h2>Index cards by industry</h2>
-          <ul className="dk-cards">
-            {industriesConfig.map((item, index) => (
-              <li key={item.industry} className="dk-card dk-drag" style={{ "--r": `${[-2, 1.5, -1, 2, -1.5][index]}deg` } as React.CSSProperties}>
-                <h3>{item.industry.split(" (")[0]}</h3>
-                <p>{item.description}</p>
-                <strong>{item.result}</strong>
-              </li>
-            ))}
-          </ul>
+          <CardFile />
         </section>
 
         <section id="experience" className="dk-section dk-pads">
