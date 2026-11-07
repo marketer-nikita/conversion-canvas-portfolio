@@ -1,8 +1,3 @@
-import { Description } from "@radix-ui/react-dialog";
-import fintechImage from "@/assets/image/Fintech_Image.webp";
-import saasImage from "@/assets/image/SaaS_Image.webp";
-import adtechImage from "@/assets/image/Ad_tech_image.webp";
-
 export const caseStudiesConfig = [
   {
     title: "Furniture Rentals Lead Gen (Dubai)",
@@ -24,7 +19,6 @@ export const caseStudiesConfig = [
       { metric: "Ad Spend", value: "AED 2.4K", change: "" },
       { metric: "High-Performing Segments", value: "Party + Location", change: "scaled" },
     ],
-    image: fintechImage,
   },
   {
     title: "High Ticket Conversion Campaign: Diamond Jewellery (NYC Store)",
@@ -46,7 +40,6 @@ export const caseStudiesConfig = [
       { metric: "Cost/Message", value: "$5.42", change: "" },
       { metric: "Avg Order Value", value: "$3,000", change: "" },
     ],
-    image: saasImage,
   },
   {
     title: "AdTech - Search Arbitrage",
@@ -73,6 +66,5 @@ export const caseStudiesConfig = [
         change: "increase",
       },
     ],
-    image: adtechImage,
   },
 ];
