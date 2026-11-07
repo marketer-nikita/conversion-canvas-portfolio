@@ -1,5 +1,3 @@
-import { Calendar, MapPin, Briefcase, TrendingUp, Users, DollarSign, Target } from "lucide-react";
-
 export const experienceConfig = [
   {
     role: "Senior Account Executive",
@@ -13,11 +11,6 @@ export const experienceConfig = [
       "Delivered 10x ROI for a B2B account and led weekly client reporting and strategic review calls.",
       "Owned campaign performance delivery and scaling decisions through daily optimization.",
     ],
-    metrics: [
-      { icon: TrendingUp, value: "15%", label: "Google CTR" },
-      { icon: DollarSign, value: "5.43", label: "Meta CPL" },
-      { icon: Users, value: "10x", label: "B2B ROI" },
-    ],
   },
   {
     role: "Associate Media Buying",
@@ -29,11 +22,6 @@ export const experienceConfig = [
       "Launched geo-targeted Google Ads via PMax & Display.",
       "Achieved consistent CPA & RPC benchmarks across segments.",
       "Built automated dashboards to track monetization quality.",
-    ],
-    metrics: [
-      { icon: TrendingUp, value: "40%", label: "RPC Increase" },
-      { icon: DollarSign, value: "$100K+", label: "Monthly Spend" },
-      { icon: Target, value: "30%", label: "CPA Reduction" },
     ],
   },
   {
@@ -47,11 +35,6 @@ export const experienceConfig = [
       "Boosted landing page CVR through VWO & MS Clarity tests",
       "Implemented conversion tracking and attribution modeling",
       "Leveraged Factors.ai to improve lead insights & campaign targeting.",
-    ],
-    metrics: [
-      { icon: Users, value: "200+", label: "Monthly Leads" },
-      { icon: TrendingUp, value: "$150K+", label: "Cumulative Ad Spend" },
-      { icon: Target, value: "3.8%", label: "ROAS on Avg" },
     ],
   },
 ];

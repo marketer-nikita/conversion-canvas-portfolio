@@ -7,7 +7,7 @@ import { profileConfig } from "@/config/profile";
 import { toolsConfig } from "@/config/tools";
 import "./styles.css";
 
-const PHOTO = "/lovable-uploads/02ece727-1d4b-407f-9ad8-81ad22872104.png";
+const PHOTO = "/nikita-gupta.png";
 const AUDIT_MAIL = `mailto:${profileConfig.email}?subject=${encodeURIComponent("Free ad account audit")}`;
 
 // Red-pen margin notes. Every fact comes from caseStudies.ts.
