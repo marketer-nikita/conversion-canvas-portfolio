@@ -9,7 +9,7 @@ export const experienceConfig = [
     description:
       "Managed full-funnel lead-generation campaigns across Meta Ads and Google Search, owning setup, optimization, and daily performance delivery.",
     achievements: [
-      "Achieved 15% CTR(Click Through Rate) on Google Ads and INR 15 CPL(Cost Per Lead) on Meta with structured A/B tests on creatives, keywords, and landing pages.",
+      "Achieved 15% CTR (Click Through Rate) on Google Ads and INR 15 CPL (Cost Per Lead) on Meta with structured A/B tests on creatives, keywords, and landing pages.",
       "Delivered 10x ROI for a B2B account and led weekly client reporting and strategic review calls.",
       "Owned campaign performance delivery and scaling decisions through daily optimization.",
     ],

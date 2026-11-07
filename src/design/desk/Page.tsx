@@ -17,15 +17,29 @@ const SHEETS = [
   { circled: "1.82x", label: "ROAS", note: "80+ campaigns, $3K a day." },
 ];
 
+// The order of work on an account. Every step comes from caseStudies.ts and experience.ts.
+const METHOD = [
+  "Set up conversion tracking, so every sale can be traced to an ad.",
+  "Split campaigns by intent, so the winners stand out quickly.",
+  "Test creatives, keywords and landing pages against each other.",
+  "Cut what doesn't convert and move that money to what does.",
+  "Report every week, then decide what to scale on a review call.",
+];
+
 const CIRCLE = "M52 6 C24 3 5 10 4 21 C3 33 28 38 55 36 C80 34 97 27 96 17 C95 7 72 3 42 7";
 const UNDERLINE = "M2 12 C24 6 44 15 62 9 C74 5 88 8 98 10";
 
+const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
+
 // Puts anything with .dk-drag under the pointer. Links inside still click, and phones keep normal scrolling.
 const useDesk = (rootRef: React.RefObject<HTMLDivElement>) => {
+  const [moved, setMoved] = useState(false);
+
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
     const canDrag = window.matchMedia("(min-width: 761px) and (pointer: fine)");
+    const still = window.matchMedia("(prefers-reduced-motion: reduce)");
     let top = 10;
 
     const onDown = (e: PointerEvent) => {
@@ -33,31 +47,71 @@ const useDesk = (rootRef: React.RefObject<HTMLDivElement>) => {
       const item = target.closest<HTMLElement>(".dk-drag");
       if (!item || !canDrag.matches || target.closest("a")) return;
       e.preventDefault();
-      const startX = e.clientX - Number(item.dataset.x || 0);
-      const startY = e.clientY - Number(item.dataset.y || 0);
+      const baseX = Number(item.dataset.x || 0);
+      const baseY = Number(item.dataset.y || 0);
+      const box = item.getBoundingClientRect();
+      const page = root.getBoundingClientRect();
+      let lastX = e.clientX;
+      let velocity = 0;
+      let tilt = 0;
+      let raf = 0;
       item.style.zIndex = String(++top);
       item.classList.add("is-held");
 
+      // Paper swings against the direction it's pulled, then hangs straight again.
+      const swing = () => {
+        tilt += (velocity * 0.8 - tilt) * 0.18;
+        velocity *= 0.8;
+        item.style.setProperty("--tilt", `${tilt.toFixed(2)}deg`);
+        raf = requestAnimationFrame(swing);
+      };
+      if (!still.matches) raf = requestAnimationFrame(swing);
+
       const onMove = (move: PointerEvent) => {
-        const x = move.clientX - startX;
-        const y = move.clientY - startY;
-        item.dataset.x = String(x);
-        item.dataset.y = String(y);
-        item.style.setProperty("--x", `${x}px`);
-        item.style.setProperty("--y", `${y}px`);
+        // At least half of an object always stays on the page, so nothing can get lost.
+        const dx = clamp(move.clientX - e.clientX, page.left - box.left - box.width / 2, page.right - box.right + box.width / 2);
+        const dy = clamp(move.clientY - e.clientY, page.top - box.top, page.bottom - box.bottom);
+        velocity = clamp(move.clientX - lastX, -12, 12);
+        lastX = move.clientX;
+        item.dataset.x = String(baseX + dx);
+        item.dataset.y = String(baseY + dy);
+        item.style.setProperty("--x", `${baseX + dx}px`);
+        item.style.setProperty("--y", `${baseY + dy}px`);
+        setMoved(true);
       };
       const onUp = () => {
+        cancelAnimationFrame(raf);
+        item.style.removeProperty("--tilt");
         item.classList.remove("is-held");
         window.removeEventListener("pointermove", onMove);
         window.removeEventListener("pointerup", onUp);
+        window.removeEventListener("pointercancel", onUp);
       };
       window.addEventListener("pointermove", onMove);
       window.addEventListener("pointerup", onUp);
+      window.addEventListener("pointercancel", onUp);
     };
 
     root.addEventListener("pointerdown", onDown);
     return () => root.removeEventListener("pointerdown", onDown);
   }, [rootRef]);
+
+  const tidy = () => {
+    const root = rootRef.current;
+    if (!root) return;
+    root.classList.add("is-tidying");
+    root.querySelectorAll<HTMLElement>(".dk-drag").forEach((item) => {
+      delete item.dataset.x;
+      delete item.dataset.y;
+      item.style.removeProperty("--x");
+      item.style.removeProperty("--y");
+      item.style.removeProperty("z-index");
+    });
+    window.setTimeout(() => root.classList.remove("is-tidying"), 600);
+    setMoved(false);
+  };
+
+  return { moved, tidy };
 };
 
 // Red pen that draws itself once its mark scrolls into view.
@@ -88,14 +142,20 @@ const Pen = ({ path, className = "", delay = 0 }: { path: string; className?: st
 
 const Page = () => {
   const rootRef = useRef<HTMLDivElement>(null);
-  useDesk(rootRef);
+  const { moved, tidy } = useDesk(rootRef);
 
   return (
     <div className="dk" ref={rootRef}>
+      {moved && (
+        <button type="button" className="dk-tidy" onClick={tidy}>
+          Tidy up the desk
+        </button>
+      )}
       <header className="dk-top">
         <a href="#home">{profileConfig.name}</a>
         <nav aria-label="Sections">
           <a href="#case-studies">Reports</a>
+          <a href="#about">How I work</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Free audit</a>
         </nav>
@@ -134,7 +194,7 @@ const Page = () => {
             <p>10x ROI on Google for a Dubai rental brand</p>
           </div>
 
-          <p className="dk-hint">go on, move things around</p>
+          {!moved && <p className="dk-hint">go on, move things around</p>}
         </section>
 
         <section id="case-studies" className="dk-section">
@@ -168,13 +228,27 @@ const Page = () => {
               </article>
             ))}
           </div>
+          <p className="dk-want">
+            <span>want a report like this for your account?</span>
+            <a href={AUDIT_MAIL}>Get a free ad audit</a>
+          </p>
+        </section>
+
+        <section id="about" className="dk-section">
+          <div className="dk-method">
+            <span className="dk-tape" aria-hidden="true" />
+            <h2>How I run an account</h2>
+            <ol>
+              {METHOD.map((step) => <li key={step}>{step}</li>)}
+            </ol>
+          </div>
         </section>
 
         <section id="industries" className="dk-section">
           <h2>Index cards by industry</h2>
           <ul className="dk-cards">
             {industriesConfig.map((item, index) => (
-              <li key={item.industry} className="dk-card" style={{ "--r": `${[-2, 1.5, -1, 2, -1.5][index]}deg` } as React.CSSProperties}>
+              <li key={item.industry} className="dk-card dk-drag" style={{ "--r": `${[-2, 1.5, -1, 2, -1.5][index]}deg` } as React.CSSProperties}>
                 <h3>{item.industry.split(" (")[0]}</h3>
                 <p>{item.description}</p>
                 <strong>{item.result}</strong>
@@ -192,6 +266,9 @@ const Page = () => {
                   <h3>{job.role}</h3>
                   <p className="dk-sheet-meta">{job.company}, {job.period}</p>
                   <p>{job.description}</p>
+                  <ul className="dk-wins">
+                    {job.achievements.map((win) => <li key={win}>{win}</li>)}
+                  </ul>
                 </li>
               ))}
             </ul>
