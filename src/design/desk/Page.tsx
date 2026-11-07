@@ -323,11 +323,11 @@ const Page = () => {
 
         <section id="tools-skills" className="dk-section">
           <h2>Stickers on my laptop</h2>
-          <ul className="dk-stickers dk-laptop">
+          <ul className="dk-stickers">
             {toolsConfig.map((tool, index) => (
               <li key={tool.name} className="dk-sticker dk-drag" style={{ "--r": `${[-5, 3, -2, 6, -4, 2][index % 6]}deg` } as React.CSSProperties}>
                 <img src={tool.logo} alt="" draggable={false} />
-                <span>{tool.name}<small>{tool.proficiency}</small></span>
+                <span>{tool.name}</span>
               </li>
             ))}
           </ul>

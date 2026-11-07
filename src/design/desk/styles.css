@@ -60,7 +60,7 @@
   background: var(--paper);
   color: var(--ink);
   font-family: "Reenie Beanie", cursive;
-  font-size: 30px;
+  font-size: 32px;
   line-height: 1;
   box-shadow: var(--shadow);
   transform: rotate(-2deg);
@@ -100,7 +100,7 @@
   z-index: 2;
 }
 .dk-print img { display: block; width: 100%; height: auto; pointer-events: none; }
-.dk-print figcaption { font-family: "Reenie Beanie", cursive; font-size: 24px; line-height: 1; padding-top: 8px; }
+.dk-print figcaption { font-family: "Reenie Beanie", cursive; font-size: 26px; line-height: 1; padding-top: 8px; }
 .dk-tape { position: absolute; top: -14px; left: 50%; width: 92px; height: 28px; margin-left: -46px; background: rgb(255 240 170 / 0.72); transform: rotate(-3deg); box-shadow: 0 1px 1px rgb(0 0 0 / 0.15); }
 .dk-note {
   position: absolute;
@@ -109,7 +109,7 @@
   padding: 18px;
   box-shadow: var(--shadow);
   font-family: "Reenie Beanie", cursive;
-  font-size: clamp(27px, 2.4vw, 34px);
+  font-size: clamp(29px, 2.6vw, 37px);
   line-height: 1;
   z-index: 2;
 }
@@ -136,8 +136,14 @@
 .dk-brief a { background: var(--red); color: var(--paper); padding: 13px 22px; line-height: 1.2; font-size: clamp(18px, 1.5vw, 21px); font-weight: 800; text-decoration: none; box-shadow: 0 3px 0 #8d0b12; transition: translate 0.08s, box-shadow 0.08s; }
 .dk-brief a:hover { background: #b70e17; }
 .dk-brief a:active { translate: 0 3px; box-shadow: 0 0 0 #8d0b12; }
-.dk-brief-cta span { font-family: "Reenie Beanie", cursive; color: var(--red); font-size: 27px; line-height: 1; }
-.dk-hint { position: absolute; left: 6%; top: calc(var(--below) + 320px); color: var(--paper); font-family: "Reenie Beanie", cursive; font-size: 32px; line-height: 1; transform: rotate(-3deg); }
+.dk-brief-cta span { font-family: "Reenie Beanie", cursive; color: var(--red); font-size: 29px; line-height: 1; }
+.dk-hint { position: absolute; left: 6%; top: calc(var(--below) + 320px); color: var(--paper); font-family: "Reenie Beanie", cursive; font-size: 34px; line-height: 1; transform: rotate(-3deg); }
+
+/* Reenie Beanie is hairline thin, so every handwritten line gets a touch more ink. */
+.dk-print figcaption, .dk-note, .dk-brief-cta span, .dk-hint, .dk-hand, .dk-card strong, .dk-method li, .dk-want span, .dk-tidy, .dk-letter .dk-sign {
+  -webkit-text-stroke: 0.3px currentColor;
+  letter-spacing: 0.012em;
+}
 
 /* The pen: path length normalised to 1, then the dash is pulled back. */
 .dk-pen { position: absolute; pointer-events: none; overflow: visible; }
@@ -159,7 +165,7 @@
 .dk-sheet-meta { font-size: 13px; color: #55615b; }
 .dk-sheet h3, .dk-card h3, .dk-pad h3 { font-size: 22px; font-weight: 800; line-height: 1.12; letter-spacing: -0.015em; }
 .dk-result { font-size: clamp(38px, 3.8vw, 56px); line-height: 1; font-weight: 800; font-stretch: 112%; letter-spacing: -0.035em; margin: 26px 0 14px 12px; }
-.dk-hand { font-family: "Reenie Beanie", cursive; color: var(--red); font-size: 29px; line-height: 1; transform: rotate(-2deg); margin-bottom: 14px; }
+.dk-hand { font-family: "Reenie Beanie", cursive; color: var(--red); font-size: 31px; line-height: 1; transform: rotate(-2deg); margin-bottom: 14px; }
 .dk-sheet table { width: 100%; font-size: 14px; border-collapse: collapse; margin-bottom: 14px; }
 .dk-sheet td { border-top: 1px solid var(--ink); padding: 4px 0; }
 .dk-sheet td:last-child { text-align: right; font-weight: 700; }
@@ -168,7 +174,7 @@
 .dk-sheet li { margin-top: 4px; }
 
 .dk-want { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 10px 20px; margin-top: clamp(76px, 7vw, 100px); color: var(--paper); }
-.dk-want span { font-family: "Reenie Beanie", cursive; font-size: 34px; line-height: 1; transform: rotate(-1.5deg); }
+.dk-want span { font-family: "Reenie Beanie", cursive; font-size: 36px; line-height: 1; transform: rotate(-1.5deg); }
 .dk-want a { background: var(--red); color: var(--paper); padding: 10px 18px; font-weight: 700; text-decoration: none; box-shadow: var(--shadow); }
 .dk-want a:hover { background: var(--ink); }
 
@@ -188,7 +194,7 @@
 }
 .dk-method .dk-tape { top: -12px; }
 .dk-method h2 { font-size: clamp(30px, 4vw, 56px); line-height: 1.05; font-weight: 800; font-stretch: 112%; letter-spacing: -0.03em; margin-bottom: 18px; }
-.dk-method li { display: grid; grid-template-columns: 58px minmax(0, 1fr); align-items: start; font-family: "Reenie Beanie", cursive; font-size: clamp(30px, 3vw, 42px); line-height: 1.08; padding: 8px 0; }
+.dk-method li { display: grid; grid-template-columns: 58px minmax(0, 1fr); align-items: start; font-family: "Reenie Beanie", cursive; font-size: clamp(32px, 3.1vw, 44px); line-height: 1.08; padding: 8px 0; }
 .dk-num { position: relative; justify-self: start; margin-left: 8px; padding: 0 7px; color: var(--red); }
 .dk-num .dk-round { inset: -6% -30%; width: 160%; height: 112%; }
 
@@ -206,7 +212,7 @@
 }
 .dk-card h3 { font-size: 18px; line-height: 1.2; white-space: nowrap; }
 .dk-card p { font-size: 14px; line-height: 24px; margin-top: 14px; }
-.dk-card strong { display: block; font-family: "Reenie Beanie", cursive; color: var(--red); font-size: 32px; line-height: 1; font-weight: 400; margin-top: 8px; }
+.dk-card strong { display: block; font-family: "Reenie Beanie", cursive; color: var(--red); font-size: 34px; line-height: 1; font-weight: 400; margin-top: 8px; }
 
 .dk-pads { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: clamp(16px, 3vw, 40px); align-items: start; }
 .dk-pad {
@@ -227,27 +233,9 @@
 .dk-certs a { font-weight: 700; display: block; line-height: 1.25; }
 .dk-certs span { font-size: 13px; color: #55615b; }
 
-/* A laptop lid: dark anodised metal, big radius, a hinge along the bottom. */
-.dk-laptop {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: clamp(22px, 4vw, 52px) clamp(16px, 4vw, 52px) clamp(30px, 5vw, 64px);
-  background: linear-gradient(160deg, #3a3f44, #24282c 70%);
-  border-radius: 20px 20px 8px 8px;
-  border-bottom: 10px solid #15181a;
-  box-shadow: 0 4px 3px rgb(0 0 0 / 0.3), 0 18px 26px -10px rgb(0 0 0 / 0.55);
-  justify-content: center;
-}
-.dk-stickers { display: flex; flex-wrap: wrap; gap: 16px 20px; }
-.dk-sticker { display: flex; align-items: center; gap: 10px; background: var(--paper); padding: 9px 18px 9px 11px; box-shadow: 0 1px 2px rgb(0 0 0 / 0.5); font-weight: 750; line-height: 1.15; border-radius: 999px; }
-.dk-sticker small { display: block; font-size: 12px; font-weight: 500; color: #55615b; }
-.dk-sticker img { width: 32px; height: 32px; object-fit: contain; pointer-events: none; }
-/* No two stickers are cut the same. */
-.dk-sticker:nth-child(3n + 2) { border-radius: 10px; background: var(--yellow); }
-.dk-sticker:nth-child(3n + 2) small { color: var(--ink); }
-.dk-sticker:nth-child(5n) { border-radius: 2px; }
-.dk-sticker:nth-child(4n + 1) { margin-top: 10px; }
-.dk-sticker:nth-child(3n) { margin-top: -6px; }
+.dk-stickers { display: flex; flex-wrap: wrap; gap: 14px 16px; }
+.dk-sticker { display: flex; align-items: center; gap: 10px; background: var(--paper); padding: 9px 16px 9px 10px; border-radius: 999px; box-shadow: 0 0 0 3px var(--paper), var(--shadow); font-weight: 700; }
+.dk-sticker img { width: 28px; height: 28px; object-fit: contain; pointer-events: none; }
 
 .dk-letter { position: relative; max-width: 780px; margin: 0 auto 40px; background: var(--paper); padding: clamp(24px, 5vw, 56px); box-shadow: var(--shadow); transform: rotate(-0.8deg); }
 .dk-letter h2 { font-size: clamp(36px, 5.6vw, 76px); line-height: 1; font-weight: 800; font-stretch: 112%; letter-spacing: -0.035em; color: var(--ink); }
@@ -283,14 +271,13 @@
   .dk-strip { top: auto; flex: 0 1 auto; max-width: 100%; font-size: 15vw; line-height: 0.98; white-space: normal; clip-path: none; }
   .dk-strip--2 { top: auto; margin: -12px 0 0 auto; }
   .dk-print { order: 2; flex: 0 0 auto; width: 42vw; }
-  .dk-print figcaption { font-size: 18px; }
+  .dk-print figcaption { font-size: 20px; }
   .dk-note { min-height: 0; }
   .dk-note--yellow { order: 1; flex: 1 1 0; width: auto; min-width: 0; padding: 14px; }
   .dk-brief { order: 3; width: 100%; }
   .dk-note--pink { order: 4; width: 62vw; margin: -8px 0 0 auto; }
   .dk-hint { display: none; }
   .dk-note--pink { left: auto; }
-  .dk-laptop { border-radius: 14px 14px 6px 6px; }
   .dk-ruler { display: none; }
   .dk-pads { grid-template-columns: minmax(0, 1fr); }
 }
