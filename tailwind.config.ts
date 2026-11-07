@@ -19,7 +19,14 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				archivo: ['"Archivo Variable"', 'Arial Narrow', 'Arial', 'sans-serif'],
+			},
 			colors: {
+				paper: '#ECEEF1',
+				ink: '#0F1B3D',
+				cobalt: { DEFAULT: '#2340FF', deep: '#1A2FC4' },
+				subtle: '#5A6378',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
