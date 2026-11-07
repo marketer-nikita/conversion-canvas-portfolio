@@ -191,10 +191,10 @@ const Page = () => {
       <main>
         <section id="home" className="dk-hero">
           <h1>
-            <span className="dk-strip dk-drag" style={{ "--r": "-2.4deg", "--d": 0 } as React.CSSProperties}>I make ad budgets</span>{" "}
+            <span className="dk-strip dk-drag" style={{ "--r": "-2.4deg", "--d": 0 } as React.CSSProperties}>Your ads spend money.</span>{" "}
             <span className="dk-strip dk-strip--2 dk-drag" style={{ "--r": "1.3deg", "--d": 1 } as React.CSSProperties}>
-              earn their keep.
-              <Pen path={UNDERLINE} className="dk-under" delay={1500} />
+              Let's make them{" "}
+              <span className="dk-earn">earn it.<Pen path={UNDERLINE} className="dk-under" delay={1500} /></span>
             </span>
           </h1>
 
@@ -213,7 +213,7 @@ const Page = () => {
           </div>
 
           <div className="dk-brief dk-drag" style={{ "--r": "-1.5deg", "--d": 4 } as React.CSSProperties}>
-            <p>Google and Meta campaigns for B2B, e-commerce and local brands. Tested every week, reported plainly, and judged on revenue, not clicks.</p>
+            <p>Spending on ads but not seeing sales? I'll show you where your budget leaks and what to fix first. The audit is free.</p>
             <div className="dk-brief-cta">
               <a href={AUDIT_MAIL}>Get a free ad audit</a>
               <span>I reply within 24 hours</span>
