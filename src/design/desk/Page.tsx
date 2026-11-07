@@ -191,10 +191,10 @@ const Page = () => {
       <main>
         <section id="home" className="dk-hero">
           <h1>
-            <span className="dk-strip dk-drag" style={{ "--r": "-2.4deg", "--d": 0 } as React.CSSProperties}>Your ads spend money.</span>{" "}
+            <span className="dk-strip dk-drag" style={{ "--r": "-2.4deg", "--d": 0 } as React.CSSProperties}>Earn more business</span>{" "}
             <span className="dk-strip dk-strip--2 dk-drag" style={{ "--r": "1.3deg", "--d": 1 } as React.CSSProperties}>
-              Let's make them{" "}
-              <span className="dk-earn">earn it.<Pen path={UNDERLINE} className="dk-under" delay={1500} /></span>
+              with{" "}
+              <span className="dk-earn">ads that sell.<Pen path={UNDERLINE} className="dk-under" delay={1500} /></span>
             </span>
           </h1>
 
