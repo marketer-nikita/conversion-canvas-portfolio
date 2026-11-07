@@ -145,7 +145,7 @@ const Hero = () => {
       <div className="mx-auto max-w-[1320px] px-4 pb-14 pt-28 sm:px-8 sm:pt-36 lg:pb-20">
         <h1
           id="hero-heading"
-          className="text-[clamp(3.1rem,14.5vw,11rem)] font-[750] leading-[0.86] tracking-[-0.012em]"
+          className="text-[clamp(2.9rem,13vw,10rem)] font-[750] leading-[0.86] tracking-[-0.012em]"
           style={{ fontStretch: "68%", wordSpacing: "0.08em" }}
         >
           {headline.map((line) => (

@@ -1,8 +1,8 @@
 // Hero copy. Every claim here is backed by caseStudies.ts / experience.ts — keep it that way.
 export const heroConfig = {
-  headline: ["I make ad budgets", "earn their keep."],
+  headline: ["Earn more business", "with ads that sell."],
   subheadline:
-    "Google and Meta campaigns for B2B, e-commerce and local brands. Tested every week, reported plainly, and judged on revenue, not clicks.",
+    "I'm Nikita. I plan, run and scale Google & Meta campaigns for growing brands.",
   primaryCta: { label: "Get a free ad audit", targetId: "contact" },
   secondaryCta: { label: "See case studies", targetId: "case-studies" },
   riskReversal: "I reply within 24 hours. No commitment.",
